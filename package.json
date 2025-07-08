@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp public/_headers out/ && cp public/_redirects out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
+    "build": "next build && cp public/_headers out/ && cp public/_redirects out/ && cp public/vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
     "serve": "npx serve out",
     "deploy:github": "npm run build && touch out/.nojekyll",
     "deploy:netlify": "npm run build",
-    "deploy:vercel": "npm run build",
+    "deploy:vercel": "npm run build && echo 'Upload out/ directory to Vercel'",
     "deploy:cloudflare": "npm run build && echo 'Upload out/ directory to Cloudflare Pages'"
   },
   "dependencies": {
