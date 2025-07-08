@@ -571,6 +571,65 @@ export const STATIC_MENU = {
       ]
     },
     {
+      id: "sides",
+      name: "Sides",
+      description: "Delicious sides to complement your meal",
+      items: [
+        {
+          id: "chicken-wings",
+          name: "Chicken Wings",
+          description: "marinated chicken wings grilled to perfection",
+          price: 7.50,
+          tags: ["halal", "popular"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "chips",
+          name: "Chips",
+          description: "Crispy golden fries",
+          price: 3.40,
+          tags: ["vegetarian"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "chips-loaded-with-cheese",
+          name: "Chips Loaded with Cheese",
+          description: "Fries topped with melted cheese",
+          price: 4.40,
+          tags: ["vegetarian"],
+          allergens: ["dairy"],
+          image: ""
+        }
+      ]
+    },
+    {
+      id: "salads",
+      name: "Salads",
+      description: "Fresh and healthy salads",
+      items: [
+        {
+          id: "acili-ezme-salata",
+          name: "Acılı Ezme Salata",
+          description: "Finely diced tomato, onion, pepper salad with spices and lemon juice",
+          price: 6.90,
+          tags: ["vegan", "vegetarian"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "coban-salata",
+          name: "Çoban Salata",
+          description: "Finely diced tomato, green pepper, cucumber, onion, parsley, olive oil and lemon juice",
+          price: 7.90,
+          tags: ["vegan", "vegetarian"],
+          allergens: [],
+          image: ""
+        }
+      ]
+    },
+    {
       id: "desserts",
       name: "Desserts",
       description: "Traditional Anatolian sweets to end your meal perfectly",
@@ -583,40 +642,6 @@ export const STATIC_MENU = {
           tags: ["vegetarian", "traditional"],
           allergens: ["gluten", "dairy", "nuts"],
           image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_baklawa.jpg"
-        }
-      ]
-    },
-    {
-      id: "drinks",
-      name: "Drinks",
-      description: "Refreshing beverages and traditional Anatolian drinks",
-      items: [
-        {
-          id: "ayran",
-          name: "Ayran",
-          description: "Traditional yogurt drink",
-          price: 2.50,
-          tags: ["vegetarian", "traditional"],
-          allergens: ["dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/04076596-0c1f-4c8f-966a-86aea181dba8.jpg"
-        },
-        {
-          id: "turkish-tea",
-          name: "Turkish Tea",
-          description: "Traditional black tea served in authentic glass",
-          price: 2.00,
-          tags: ["vegan", "vegetarian", "traditional"],
-          allergens: [],
-          image: ""
-        },
-        {
-          id: "coca-cola",
-          name: "Coca-Cola",
-          description: "Classic cola soft drink",
-          price: 2.50,
-          tags: ["vegan", "vegetarian"],
-          allergens: [],
-          image: ""
         }
       ]
     },
@@ -645,6 +670,197 @@ export const STATIC_MENU = {
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/2416190c-94fb-4955-8923-7387b8d756e5.png"
         }
       ]
+    },
+    {
+      id: "drinks",
+      name: "Drinks",
+      description: "Refreshing beverages and traditional drinks",
+      items: [
+        {
+          id: "soft-drinks",
+          name: "Soft Drinks",
+          description: "",
+          price: 0,
+          tags: ["category"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Ayran (Yoghurt Drink)", price: 2.50 },
+            { name: "Şalgam (Fermented Turnip Juice)", price: 2.50 },
+            { name: "Red Bull", price: 3.50 },
+            { name: "Still Water", price: 2.50 },
+            { name: "Sparkling Water", price: 2.50 },
+            { name: "Coca Cola Original/Zero", price: 2.50 },
+            { name: "Coca Cola Diet", price: 2.80 },
+            { name: "Sprite/Fanta/Rio/Rubicon", price: 2.80 },
+            { name: "Apple/Orange Juice", price: 2.80 },
+            { name: "Lemonade", price: 2.80 }
+          ]
+        },
+        {
+          id: "whiskey",
+          name: "Whiskey",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Jack Daniel's", price: 7.90 },
+            { name: "Jack Daniel's Honey", price: 7.90 },
+            { name: "Jameson", price: 7.90 },
+            { name: "Chivas Regal", price: 7.90 },
+            { name: "Highland Single Malt", price: 7.90 }
+          ]
+        },
+        {
+          id: "cognac-brandy",
+          name: "Cognac/Brandy",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "JP. Chenet", price: 7.90 },
+            { name: "Three Barrels", price: 7.90 },
+            { name: "E&J", price: 7.90 },
+            { name: "Bardinet", price: 7.90 },
+            { name: "Hennessy", price: 7.90 },
+            { name: "Kirkland XO Cognac", price: 7.90 }
+          ]
+        },
+        {
+          id: "rum",
+          name: "Rum",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Havana Club Cuban Spiced", price: 7.90 },
+            { name: "Havana Club", price: 7.90 },
+            { name: "Ron Santiago De Cuba", price: 7.90 },
+            { name: "Sailor Jerry", price: 7.90 }
+          ]
+        },
+        {
+          id: "wine",
+          name: "Wine",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Turkish White Wine (175ml)", price: 5.90 },
+            { name: "Turkish Red Wine (175ml)", price: 5.90 },
+            { name: "Turkish Rose (175ml)", price: 5.90 },
+            { name: "Any Wine Bottles (750ml)", price: 23.00 },
+            { name: "Prosecco (175ml)", price: 6.90 },
+            { name: "Prosecco Bottle", price: 25.00 },
+            { name: "Aperol Spritz", price: 7.90 }
+          ]
+        },
+        {
+          id: "beers",
+          name: "Beers",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Tuborg (Turkish Beer 500ml)", price: 5.90 },
+            { name: "Efes 500ml (Turkish Beer 500ml)", price: 5.90 },
+            { name: "Bomonti (Turkish Beer 500ml)", price: 5.90 },
+            { name: "Corona Beer (330ml)", price: 3.50 },
+            { name: "Cobra Draft Beer", price: 5.90 }
+          ]
+        },
+        {
+          id: "gin",
+          name: "Gin",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Bombay Sapphire", price: 7.90 },
+            { name: "Gordon's", price: 7.90 },
+            { name: "Malfy Blood Orange", price: 7.90 },
+            { name: "Whitley Neill Apple", price: 7.90 }
+          ]
+        },
+        {
+          id: "vodka",
+          name: "Vodka",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Smirnoff", price: 7.90 },
+            { name: "Absolute", price: 7.90 },
+            { name: "Belvedere", price: 7.90 },
+            { name: "Absolute Mandarin", price: 7.90 },
+            { name: "Smirnoff Cherry Drop", price: 7.90 }
+          ]
+        },
+        {
+          id: "tequila-shots",
+          name: "Tequila Shots",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Any 4 Shots", price: 10.00 },
+            { name: "Jose Cuervo Silver", price: 3.90 },
+            { name: "Tequila Rose Strawberry", price: 3.50 }
+          ]
+        },
+        {
+          id: "raki",
+          name: "Rakı",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic", "traditional"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Yeni Rakı (50ml)", price: 6.90 },
+            { name: "Yeni Rakı (35cl)", price: 34.00 },
+            { name: "Yeni Rakı (70cl)", price: 58.00 }
+          ]
+        },
+        {
+          id: "liqueur-shots",
+          name: "Liqueur Shots",
+          description: "",
+          price: 0,
+          tags: ["category", "alcoholic"],
+          allergens: [],
+          image: "",
+          subcategory: [
+            { name: "Any 4 Shots", price: 10.00 },
+            { name: "Sourz Apple", price: 3.90 },
+            { name: "Disaronno", price: 3.90 },
+            { name: "Baileys Original", price: 3.90 },
+            { name: "Baileys Light", price: 3.90 },
+            { name: "Baileys Chocolat", price: 3.90 },
+            { name: "Baileys Espresso Crème", price: 3.90 },
+            { name: "Antica Sambuca Classic", price: 3.90 },
+            { name: "Antica Sambuca Liquorice flavour", price: 3.90 },
+            { name: "Jagermeister", price: 3.90 }
+          ]
+        }
+      ]
     }
+    
   ]
 };

@@ -215,6 +215,85 @@ export default function MenuClient() {
           {filteredCategories.map((category: any) => {
             const isOpen = openCategories.includes(category.id);
 
+            // Special rendering for drinks category
+            if (category.id === "drinks") {
+              return (
+                <Card key={category.id} className="overflow-hidden">
+                  <div
+                    className="bg-amber-50 p-6 cursor-pointer hover:bg-amber-100 transition-colors"
+                    onClick={() => toggleCategory(category.id)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                          {category.name}
+                        </h2>
+                        <p className="text-gray-600">{category.description}</p>
+                        <p className="text-sm text-amber-700 mt-2">
+                          {category.items.length} categor
+                          {category.items.length !== 1 ? "ies" : "y"}
+                        </p>
+                      </div>
+                      {isOpen ? (
+                        <ChevronUp className="w-6 h-6 text-amber-600" />
+                      ) : (
+                        <ChevronDown className="w-6 h-6 text-amber-600" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Drinks Categories */}
+                  {isOpen && (
+                    <CardContent className="p-0">
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+                        {category.items.map((drinkCategory: any) => (
+                          <div
+                            key={drinkCategory.id}
+                            className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                          >
+                            <div className="flex items-center justify-between mb-3">
+                              <h3 className="text-lg font-semibold text-gray-900">
+                                {drinkCategory.name}
+                              </h3>
+                              {drinkCategory.tags.includes("alcoholic") && (
+                                <Badge className="text-xs bg-red-100 text-red-800">
+                                  21+
+                                </Badge>
+                              )}
+                              {drinkCategory.tags.includes("traditional") && (
+                                <Badge className="text-xs bg-amber-100 text-amber-800">
+                                  Traditional
+                                </Badge>
+                              )}
+                            </div>
+
+                            <div className="space-y-2">
+                              {drinkCategory.subcategory?.map(
+                                (drink: any, index: number) => (
+                                  <div
+                                    key={index}
+                                    className="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0"
+                                  >
+                                    <span className="text-sm text-gray-700">
+                                      {drink.name}
+                                    </span>
+                                    <span className="text-sm font-semibold text-amber-600">
+                                      £{drink.price.toFixed(2)}
+                                    </span>
+                                  </div>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  )}
+                </Card>
+              );
+            }
+
+            // Regular rendering for other categories
             return (
               <Card key={category.id} className="overflow-hidden">
                 <div
