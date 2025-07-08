@@ -64,7 +64,7 @@ export const STATIC_CONTENT = {
     description: "Available for dine-in or takeaway.",
     ctaText: "View Our Menu",
     ctaLink: "/menu",
-    backgroundImage: "/images/background-1.avif"
+    backgroundImage: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/background-1.avif"
   },
   about: {
     title: "A Taste of Anatolia",

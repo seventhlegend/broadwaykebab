@@ -17,7 +17,10 @@ export function HeroSection({ hero }: HeroSectionProps) {
     <section className="hero-section performance-optimized">
       {/* Background Image - Optimized for static export */}
       <img
-        src={hero?.backgroundImage || "/images/background-1.avif"}
+        src={
+          hero?.backgroundImage ||
+          "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/background-1.avif"
+        }
         alt="Broadway Kebab Restaurant Background"
         className="hero-image absolute inset-0 w-full h-full object-cover"
         loading="eager"
@@ -42,9 +45,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Broadway Kebab
             </h1>
-            <p className="text-xl md:text-2xl mb-4">
-              Authentic Turkish Cuisine
-            </p>
+            <p className="text-xl md:text-2xl mb-4">Authentic Cuisine</p>
             <p className="text-lg mb-8">
               Experience the finest kebabs and Mediterranean flavors
             </p>
