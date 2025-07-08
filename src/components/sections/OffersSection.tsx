@@ -28,7 +28,8 @@ const offers: Offer[] = [
       "Fresh salad and flatbread included",
       "Authentic Anatolian flavour",
     ],
-    image: "/images/tuesday-offer.jpg",
+    image:
+      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/tuesday-offer.jpg",
     icon: <Utensils className="w-6 h-6" />,
     day: "Every Tuesday",
     price: "50% OFF",
@@ -46,7 +47,8 @@ const offers: Offer[] = [
       "Served with bulgur rice or chips, salad and fresh flatbread",
       "Perfect for a midweek treat with authentic Anatolian taste",
     ],
-    image: "/images/wednesday-offer.jpg",
+    image:
+      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/wednesday-offer.jpg",
     icon: <Calendar className="w-6 h-6" />,
     day: "Every Wednesday",
     price: "£15",
@@ -64,7 +66,8 @@ const offers: Offer[] = [
       "All mains served with bulgur rice or chips, fresh salad, and flatbread",
       "Full Anatolian experience",
     ],
-    image: "/images/sunday-brunch.jpg",
+    image:
+      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/sunday-brunch.jpg",
     icon: <Wine className="w-6 h-6" />,
     day: "Every Sunday",
     price: "£30",
@@ -126,7 +129,9 @@ export default function OffersSection() {
                   <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-2 sm:px-4 sm:py-2 rounded-full font-semibold flex items-center gap-2 text-sm sm:text-base">
                     <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span className="hidden sm:inline">{offer.day}</span>
-                    <span className="sm:hidden">{offer.day.replace("Every ", "")}</span>
+                    <span className="sm:hidden">
+                      {offer.day.replace("Every ", "")}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -152,11 +157,16 @@ export default function OffersSection() {
 
                     <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                       {offer.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-start gap-2 sm:gap-3">
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2 sm:gap-3"
+                        >
                           <div
                             className={`w-2 h-2 rounded-full bg-gradient-to-r ${offer.color} mt-2 flex-shrink-0`}
                           ></div>
-                          <p className="text-gray-700 text-sm sm:text-base">{detail}</p>
+                          <p className="text-gray-700 text-sm sm:text-base">
+                            {detail}
+                          </p>
                         </div>
                       ))}
                     </div>
