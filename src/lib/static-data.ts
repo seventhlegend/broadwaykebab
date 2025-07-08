@@ -236,7 +236,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/5e37f1a8-410a-470a-9d35-68028c33043b.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_cacik.jpg"
         },
         {
           id: "cacik",
@@ -245,7 +245,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian", "gluten-free"],
           allergens: ["dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/5e37f1a8-410a-470a-9d35-68028c33043b.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_cacik.jpg"
         },
         {
           id: "yaprak-sarma",
@@ -254,7 +254,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_vine_leaves.jpg"
         },
         {
           id: "saksuka",
@@ -264,6 +264,15 @@ export const STATIC_MENU = {
           tags: ["vegetarian"],
           allergens: ["dairy"],
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+        },
+        {
+          id: "olives-and-bread",
+          name: "Olives and Bread",
+          description: "Freshly baked flatbread served with marinated olives",
+          price: 4.90,
+          tags: ["vegetarian"],
+          allergens: ["gluten"],
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_olive.jpg"
         },
         {
           id: "sharing-cold-starters",
@@ -284,20 +293,56 @@ export const STATIC_MENU = {
         {
           id: "sucuk",
           name: "Sucuk",
-          description: "Deep fried spicy Anatolian sausage with bread",
+          description: "Spicy Turkish sausage cooked over charcoal",
           price: 6.50,
           tags: ["halal"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/76a7bdac-d084-46f1-b051-876a0883c808.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_sujuk.jpg"
+        },
+        {
+          id: "halloumi",
+          name: "Halloumi",
+          description: "Traditional deep fried Cypriot cheese",
+          price: 6.50,
+          tags: ["vegetarian"],
+          allergens: ["dairy"],
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_halloumi.jpg"
         },
         {
           id: "falafel",
           name: "Falafel",
-          description: "Served on bed of hummus and salad garnish with bread",
+          description: "Served on bed of hummus & salad garnish",
           price: 6.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/cf770702-21db-490d-a953-fe3ed3fb4863.jpg"
+          image: ""
+        },
+        {
+          id: "calamari",
+          name: "Calamari",
+          description: "Squid coated in bread crumbs and butter, deep fried",
+          price: 7.50,
+          tags: ["seafood"],
+          allergens: ["gluten", "dairy"],
+          image: ""
+        },
+        {
+          id: "borek",
+          name: "Börek",
+          description: "Cheese, parsley & seasoning rolled in filo pastry deep fried",
+          price: 6.50,
+          tags: ["vegetarian"],
+          allergens: ["gluten", "dairy"],
+          image: ""
+        },
+        {
+          id: "sharing-hot-starters",
+          name: "Sharing Hot Starters",
+          description: "Selection of hot starters perfect for sharing",
+          price: 24.90,
+          tags: ["sharing"],
+          allergens: ["gluten", "dairy"],
+          image: ""
         }
       ]
     },
@@ -307,47 +352,56 @@ export const STATIC_MENU = {
       description: "All kebabs served with rice or fries and salad",
       items: [
         {
-          id: "lamb-shawarma",
-          name: "Lamb Shawarma",
-          description: "Specially prepared marinated lamb cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
-          price: 14.95,
+          id: "lamb-doner",
+          name: "Lamb Doner",
+          description: "Specially prepared marinated lamb cooked spit roast with bulgur pilaf & salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          price: 15.95,
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/61628ff1-960c-4587-b400-3776275204e1.png"
         },
         {
-          id: "lamb-shish",
-          name: "Lamb Shish",
-          description: "Marinated cubes of lamb grilled on skewers with rice and salad",
-          price: 18.90,
+          id: "lamb-skewers",
+          name: "Lamb Skewers",
+          description: "Marinated cubes of lamb grilled on skewers with bulgur pilaf & salad",
+          price: 17.90,
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/062c48f1-df64-4a90-9474-f386ed86fef9.jpg"
         },
         {
-          id: "adana-kofte",
-          name: "Adana Kofte",
-          description: "Minced lamb meat grilled on skewers with rice and salad",
+          id: "adana-kebab",
+          name: "Adana Kebab",
+          description: "Minced lamb meat grilled on skewers with bulgur pilaf & salad",
           price: 16.90,
           tags: ["halal", "spicy"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/254ebec3-9123-4bed-aeed-0ea4ed15e8bf.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_adana_kofta_kebab.jpg"
         },
         {
           id: "lamb-chops",
           name: "Lamb Chops",
-          description: "4 pieces. Seasoned tender lamb chops grilled with rice and salad",
-          price: 20.95,
+          description: "4 pieces. Seasoned tender lamb chops grilled with bulgur pilaf & salad",
+          price: 19.95,
           tags: ["halal", "premium"],
           allergens: [],
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/4cf65bd6-1e46-48d7-8e6f-2293eb98499c.png"
         },
         {
-          id: "chicken-shish",
-          name: "Chicken Shish",
-          description: "Chicken seasoned and grilled on skewers with rice and salad",
+          id: "chicken-doner",
+          name: "Chicken Doner",
+          description: "Specially prepared marinated chicken cooked spit roast with bulgur pilaf & salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          price: 13.95,
+          tags: ["halal", "signature"],
+          allergens: [],
+          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/61628ff1-960c-4587-b400-3776275204e1.png"
+        },
+        {
+          id: "chicken-skewers",
+          name: "Chicken Skewers",
+          description: "Chicken seasoned and grilled on skewers with bulgur pilaf & salad",
           price: 15.95,
           tags: ["halal", "popular"],
           allergens: [],
@@ -356,7 +410,7 @@ export const STATIC_MENU = {
         {
           id: "chicken-wings",
           name: "Chicken Wings",
-          description: "8 pieces. Grilled chicken wings with rice and salad",
+          description: "8 pieces. Grilled chicken wings with bulgur pilaf & salad",
           price: 13.95,
           tags: ["halal", "popular"],
           allergens: [],
@@ -364,9 +418,36 @@ export const STATIC_MENU = {
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/69195baf-4ca0-4691-9200-e988d5d30ad5.jpg"
         },
         {
+          id: "beyti-kebab",
+          name: "Beyti Kebab",
+          description: "Seasoned minced lamb wrapped in lavash bread, grilled and served with tomato sauce and yoghurt",
+          price: 18.90,
+          tags: ["halal", "signature"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "mixed-doner",
+          name: "Mixed Döner",
+          description: "A delicious mix of marinated chicken and lamb cooked spit roast with bulgur pilaf & salad",
+          price: 14.95,
+          tags: ["halal", "signature"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "chicken-and-lamb-mix",
+          name: "Chicken and Lamb Mix",
+          description: "A delightful combination of marinated chicken and lamb cooked on skewers with bulgur pilaf & salad",
+          price: 17.90,
+          tags: ["halal", "signature"],
+          allergens: [],
+          image: ""
+        },
+        {
           id: "mixed-kebab",
           name: "Mixed Kebab",
-          description: "Adana köfte (lamb mince), chicken wings with rice and salad",
+          description: "Chicken Skewers, Adana Kebab Skewers (Lamb Mince), Chicken Wings",
           price: 21.90,
           tags: ["halal", "signature"],
           allergens: [],
@@ -376,49 +457,15 @@ export const STATIC_MENU = {
       ]
     },
     {
-      id: "wraps",
-      name: "Wraps",
-      description: "Delicious wraps filled with your favorite proteins and fresh ingredients",
-      items: [
-        {
-          id: "lamb-shawarma-wrap",
-          name: "Lamb Shawarma Wrap",
-          description: "Specially prepared marinated lamb cooked spit roast with rice and salad",
-          price: 9.95,
-          tags: ["halal"],
-          allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
-        },
-        {
-          id: "chicken-shawarma-wrap",
-          name: "Chicken Shawarma Wrap",
-          description: "Specially prepared marinated chicken cooked spit roast with rice and salad",
-          price: 8.95,
-          tags: ["halal"],
-          allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
-        },
-        {
-          id: "falafel-wrap",
-          name: "Falafel Wrap",
-          description: "Fresh falafel with vegetables and tahini sauce",
-          price: 8.50,
-          tags: ["vegan", "vegetarian"],
-          allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/60fe42ff-ea79-4e45-b805-f583b9235330.png"
-        }
-      ]
-    },
-    {
       id: "vegetarian-dishes",
       name: "Vegetarian Dishes",
-      description: "Delicious vegetarian main dishes served with rice and salad",
+      description: "Delicious vegetarian main dishes served with bulgur pilaf and salad",
       items: [
         {
           id: "halloumi-dish",
           name: "Halloumi",
-          description: "Grilled halloumi cheese with rice and salad",
-          price: 10.90,
+          description: "Grilled halloumi cheese with bulgur pilaf and salad",
+          price: 13.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c0fab3f5-3dba-4d36-9dbd-901411f1a20c.jpg"
@@ -426,11 +473,100 @@ export const STATIC_MENU = {
         {
           id: "falafel-dish",
           name: "Falafel",
-          description: "Fresh falafel with rice and salad",
-          price: 10.90,
+          description: "Fresh falafel with bulgur pilaf and salad",
+          price: 13.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
           image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/cf770702-21db-490d-a953-fe3ed3fb4863.jpg"
+        },
+        {
+          id: "halloumi-and-falafel-dish",
+          name: "Halloumi and Falafel",
+          description: "Grilled halloumi and falafel with bulgur pilaf and salad",
+          price: 14.90,
+          tags: ["vegetarian", "premium"],
+          allergens: ["dairy"],
+          image: ""
+        }
+
+      ]
+    },
+    {
+      id: "wraps",
+      name: "Wraps",
+      description: "Delicious wraps filled with your favorite proteins and fresh ingredients",
+      items: [
+        {
+          id: "lamb-doner-wrap",
+          name: "Lamb Doner Wrap",
+          description: "Specially prepared marinated lamb cooked spit roast with rice and salad",
+          price: 9.95,
+          tags: ["halal"],
+          allergens: [],
+          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          id: "chicken-doner-wrap",
+          name: "Chicken Doner Wrap",
+          description: "Specially prepared marinated chicken cooked spit roast with rice and salad",
+          price: 8.95,
+          tags: ["halal"],
+          allergens: [],
+          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          id: "halloumi-wrap",
+          name: "Halloumi Wrap",
+          description: "Grilled halloumi with vegetables",
+          price: 9.50,
+          tags: ["vegetarian"],
+          allergens: ["dairy"],
+          image: ""
+        },
+      {
+          id: "mixed-doner-wrap",
+          name: "Mixed Doner Wrap",
+          description: "A delicious mix of marinated chicken and lamb cooked spit roast with rice and salad",
+          price: 9.90,
+          tags: ["halal"],
+          allergens: [],
+          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          id: "chicken-skewers-wrap",
+          name: "Chicken Skewers Wrap",
+          description: "Grilled chicken skewers with vegetables",
+          price: 9.90,
+          tags: ["halal"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "falafel-wrap",
+          name: "Falafel Wrap",
+          description: "Fresh falafel with vegetables",
+          price: 8.50,
+          tags: ["vegan", "vegetarian"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "adana-kebab-skewers-wrap",
+          name: "Adana Kebab Skewers Wrap",
+          description: "Grilled Adana kebab skewers with vegetables",
+          price: 9.90,
+          tags: ["halal"],
+          allergens: [],
+          image: ""
+        },
+        {
+          id: "halloumi-and-falafel-wrap",
+          name: "Halloumi and Falafel Wrap",
+          description: "Grilled halloumi and falafel with vegetables",
+          price: 9.90,
+          tags: ["halal", "premium"],
+          allergens: [],
+          image: ""
         }
       ]
     },
@@ -440,13 +576,13 @@ export const STATIC_MENU = {
       description: "Traditional Anatolian sweets to end your meal perfectly",
       items: [
         {
-          id: "baklava",
-          name: "Baklava",
+          id: "baklawa",
+          name: "Baklawa",
           description: "Traditional pastry with nuts and honey syrup - 4 pieces",
           price: 7.50,
           tags: ["vegetarian", "traditional"],
           allergens: ["gluten", "dairy", "nuts"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c096fb24-8c16-45be-b8ce-d8d3a84fe9c1.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_baklawa.jpg"
         }
       ]
     },
