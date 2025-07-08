@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Broadway Kebab Restaurant - Authentic Anatolian Cuisine",
+    "description": "Experience authentic Anatolian flavours at Broadway Restaurant. Fresh mezze, grilled kebabs, and traditional desserts in a warm, welcoming atmosphere.",
+    "keywords": "Anatolian restaurant, authentic Anatolian food, kebabs, mezze, baklava, halal food",
+    "ogImage": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200"
+  },
+  "menu": {
+    "meta": {
+      "title": "Menu - Broadway Kebab Restaurant",
+      "description": "Explore our authentic Anatolian menu featuring fresh mezze, grilled kebabs, and traditional desserts."
+    },
+    "hero": {
+      "title": "Our Menu",
+      "subtitle": "Authentic Anatolian flavours crafted with passion"
+    }
+  },
+  "navbar": {
+    "brand": "Broadway",
+    "logo": "/logo.avif",
+    "links": [
+      {
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "Menu",
+        "href": "/menu"
+      },
+      {
+        "name": "About",
+        "href": "/#about"
+      },
+      {
+        "name": "Contact",
+        "href": "/#contact"
+      }
+    ],
+    "callButton": {
+      "text": "Call Us",
+      "phone": "+44 20 4537 3824",
+      "href": "tel:+442045373824"
+    }
+  },
+  "footer": {
+    "title": "Broadway Kebab Restaurant",
+    "description": "Authentic Anatolian cuisine in the heart of London",
+    "links": [
+      {
+        "name": "Call Us",
+        "href": "tel:+442045373824"
+      },
+      {
+        "name": "Email Us",
+        "href": "mailto:info@broadwaykebab.co.uk"
+      }
+    ],
+    "copyright": "Broadway Kebab Restaurant. All rights reserved."
+  },
+  "hero": {
+    "title": "Authentic Anatolian Flavours",
+    "subtitle": "Enjoy authentic Anatolian cuisine in a cosy atmosphere.",
+    "description": "Available for dine-in or takeaway.",
+    "ctaText": "View Our Menu",
+    "ctaLink": "/menu",
+    "backgroundImage": "/images/background-1.avif"
+  },
+  "about": {
+    "title": "A Taste of Anatolia",
+    "subtitle": "Bringing authentic flavours from Anatolia to London",
+    "description": "For over 15 years, Broadway has been serving traditional Anatolian cuisine in London, made with the finest ingredients and time-honoured recipes passed down through generations.",
+    "features": [
+      {
+        "title": "Fresh Daily",
+        "description": "All dishes prepared fresh daily with premium ingredients",
+        "icon": "utensils"
+      },
+      {
+        "title": "Halal Certified",
+        "description": "All our meat is halal certified for your peace of mind",
+        "icon": "check"
+      },
+      {
+        "title": "Family Recipes",
+        "description": "Traditional recipes passed down through generations",
+        "icon": "star"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Visit Us Today",
+    "address": {
+      "street": "Entrance, 29 Tooting High St Broadway Market Tooting",
+      "city": "London",
+      "state": "ENG",
+      "zip": "SW17 0RJ",
+      "country": "UK"
+    },
+    "phone": "+44 20 4537 3824",
+    "whatsapp": "+447494070750",
+    "whatsappMessage": "Hello! I would like to make a booking at Broadway Kebab Restaurant. Could you please help me with availability and table reservation? Thank you! 🍽️",
+    "email": "info@broadwaykebab.co.uk",
+    "hours": {
+      "monday": "closed",
+      "tuesday": "11:30 AM - 10:30 PM", 
+      "wednesday": "11:30 AM - 10:30 PM",
+      "thursday": "11:30 AM - 11:00 PM",
+      "friday": "11:30 AM - 11:30 PM",
+      "saturday": "11:30 AM - 11:30 PM",
+      "sunday": "11:30 PM - 9:30 PM"
+    },
+    "mapUrl": "https://maps.app.goo.gl/n4njdF3ToSxJZX4n9"
+  }
+}

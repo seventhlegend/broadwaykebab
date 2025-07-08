@@ -1,0 +1,70 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Dawan Dlshad",
+      "rating": 5,
+      "text": "Absolutely fantastic! The food at Broadway BBQ in Tooting was amazing — full of flavour and cooked to perfection. I had the mixed kebab, and it was simply outstanding. Tender, juicy, and packed with taste. The service was friendly and efficient, adding to an already great experience. Highly recommend if you're in the area and craving some delicious BBQ! 💯",
+      "location": "Local Guide • 13 reviews • 36 photos",
+      "date": "a week ago",
+      "verified": true,
+      "badges": ["NEW"]
+    },
+    {
+      "id": 2,
+      "name": "Asif Zaman",
+      "rating": 4,
+      "text": "First time visiting Broadway BBQ and nice to visit at Turkish restaurant in Tooting. We went on a Wednesday when there was a 50% offer on mains. We got a mixed cold starters came with warm breads, lamb chops and a plate of lamb shawarma. Overall the food was good, the lamb was slightly dry and lacked some flavour, but the chops were good. The staff were friendly and attentive.",
+      "location": "Local Guide • 179 reviews • 811 photos",
+      "date": "2 months ago",
+      "verified": true
+    },
+    {
+      "id": 3,
+      "name": "Zahraa H. Ali",
+      "rating": 5,
+      "text": "The sandwiches were AMAZING!!!!!! This restaurant uses very fresh vege and chicken. The spices are also very rich and delicious. I recommend having the chicken doner. They also serve side dips.",
+      "location": "Local Guide • 82 reviews • 190 photos",
+      "date": "2 weeks ago",
+      "verified": true,
+      "badges": ["NEW"]
+    },
+    {
+      "id": 4,
+      "name": "F B",
+      "rating": 5,
+      "text": "If you're looking for an affordable place with authentic flavours and warm hospitality, this is the place for you! They have dishes either to share or large mains to have on your own. The BBQ was amazing and are very generous portions. Every dish came out hot and when it was ready. We had the pleasure of meeting the owner Zozy, who made sure all our needs were catered to.",
+      "location": "Local Guide • 80 reviews • 174 photos",
+      "date": "3 months ago",
+      "verified": true
+    },
+    {
+      "id": 5,
+      "name": "Samapth Sripathum",
+      "rating": 5,
+      "text": "I recently stopped by this restaurant while passing through Broadway Market. As soon as I checked the menu, a lovely lady named Zozy warmly welcomed me, which made a great first impression. The food was fresh, well-prepared, and tasted great. Plus, it was quite affordable for the quality and portion size. The restaurant itself has a lovely atmosphere with beautiful decorations and nice music.",
+      "location": "Local Guide • 33 reviews • 85 photos",
+      "date": "4 months ago",
+      "verified": true
+    },
+    {
+      "id": 6,
+      "name": "Szabolcs Török",
+      "rating": 5,
+      "text": "What a place! It was my first time on this area and decided to have dinner at Broadway BBQ based on reviews, but this place was far beyond expectations! Friendly and welcoming staff, great atmosphere, fantastic food and it was 50% off on all mains due to midweek discount! I will definitely become a regular here, such a shame I can't give them 6 stars.",
+      "location": "Local Guide • 6 reviews • 4 photos",
+      "date": "a week ago",
+      "verified": true,
+      "badges": ["NEW"]
+    },
+    {
+      "id": 7,
+      "name": "Vasena (Vasi)",
+      "rating": 5,
+      "text": "We came on a Sunday afternoon and ordered the kebab platter. Zozy the owner immediately made us feel welcome. The food was laid on quickly and we were treated like VIPs. Amazing service and the food was exceptional. Tastiest chips ever! Delicious freshly grilled meats, the wraps were soft and tasty, the bulgar wheat and dips all outstanding.",
+      "location": "3 reviews • 1 photo",
+      "date": "3 months ago",
+      "verified": true
+    }
+  ]
+}

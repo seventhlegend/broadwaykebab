@@ -1,0 +1,8 @@
+{
+  "name": "bfcache-test",
+  "version": "1.0.0",
+  "scripts": {
+    "test-production": "npm run build && npm run start",
+    "analyze-bfcache": "echo 'Testing bfcache compatibility...' && npm run build && npm run start & sleep 5 && curl -I http://localhost:3000 && pkill node"
+  }
+}

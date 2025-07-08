@@ -1,0 +1,746 @@
+{
+  "categories": [
+    {
+      "id": "cold-starters",
+      "name": "Cold Starters",
+      "description": "Fresh mezze and traditional cold appetizers",
+      "items": [
+        {
+          "id": "hummus",
+          "name": "Humus",
+          "description": "Crushed chickpeas, tahini, garlic, lemon juice with bread",
+          "price": 4.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c096fb24-8c16-45be-b8ce-d8d3a84fe9c1.jpg"
+        },
+        {
+          "id": "baba-ghanoush",
+          "name": "Baba Ghanoush (Yogurtlu Patlican)",
+          "description": "Smoked aubergine mixed with natural yoghurt and garlic with bread",
+          "price": 4.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/5e37f1a8-410a-470a-9d35-68028c33043b.jpg"
+        },
+        {
+          "id": "cacik",
+          "name": "Cacik",
+          "description": "Chopped cucumber and a hint of garlic in a creamy yoghurt sauce with bread",
+          "price": 4.90,
+          "tags": ["vegetarian", "gluten-free"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/5e37f1a8-410a-470a-9d35-68028c33043b.jpg"
+        },
+        {
+          "id": "yaprak-sarma",
+          "name": "Yaprak Sarma",
+          "description": "Vine leaves filled with rice",
+          "price": 4.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+        },
+        {
+          "id": "saksuka",
+          "name": "Saksuka",
+          "description": "Turkish aubergine in a rich tomato green pepper, garlic",
+          "price": 4.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+        },
+        {
+          "id": "olives-and-bread",
+          "name": "Olives and Bread",
+          "description": "A selection of marinated olives served with warm bread",
+          "price": 4.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": ["gluten"],
+          "image": ""
+        },
+        {
+          "id": "sharing-cold-starters",
+          "name": "Sharing Cold Starters",
+          "description": "Humus, cacik, baba ghanoush, yaprak sarma and bread sharing cold starter for 4 to 6 people",
+          "price": 19.00,
+          "tags": ["vegetarian"],
+          "allergens": [],
+          "image": ""
+        }
+        
+      ]
+    },
+    {
+      "id": "hot-starters",
+      "name": "Hot Starters",
+      "description": "Warm appetizers and traditional Anatolian bites",
+      "items": [
+        {
+          "id": "sucuk",
+          "name": "Sucuk",
+          "description": "Deep fried spicy Anatolian sausage with bread",
+          "price": 6.50,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/76a7bdac-d084-46f1-b051-876a0883c808.jpg"
+        },
+        {
+          "id": "falafel",
+          "name": "Falafel",
+          "description": "Served on bed of hummus and salad garnish with bread",
+          "price": 6.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/cf770702-21db-490d-a953-fe3ed3fb4863.jpg"
+        },
+        {
+          "id": "borek",
+          "name": "Borek",
+          "description": "Cheese, parsley and seasoning rolled in filo pastry deep fried",
+          "price": 5.50,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy", "gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/dff14bb6-6553-4505-9e4b-e7b80fd84915.jpg"
+        },
+        {
+          "id": "prawns",
+          "name": "Prawns (6pcs)",
+          "description": "",
+          "price": 8.50,
+          "tags": [],
+          "allergens": ["shellfish"],
+          "image": ""
+        },
+        {
+          "id": "sharing-starter-fish",
+          "name": "Sharing Starter (Fish)",
+          "description": "Prawns (6pcs), Calamari (4 pcs), Octopus (1pc)",
+          "price": 22.50,
+          "tags": [],
+          "allergens": ["shellfish", "fish"],
+          "image": ""
+        },
+        {
+          "id": "halloumi",
+          "name": "Halloumi",
+          "description": "Traditional deep fried Cypriot cheese with bread",
+          "price": 6.50,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c0fab3f5-3dba-4d36-9dbd-901411f1a20c.jpg"
+        },
+        {
+          "id": "calamari-starter",
+          "name": "Calamari Starter",
+          "description": "4 pieces. Deep fried in bread crumbs and butter",
+          "price": 7.50,
+          "tags": [],
+          "allergens": ["fish", "dairy", "gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/6fbc8a2a-4f26-4c6e-87a9-f6c658580197.jpg"
+        },
+        {
+          "id": "sharing-hot-starters",
+          "name": "Sharing Hot Starters",
+          "description": "Sucuk, halloumi, falafel, calamari, borek (Anatolian pastries) sharing starter for 4 to 6 people",
+          "price": 24.90,
+          "tags": [],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "octopus",
+          "name": "Octopus (1pc)",
+          "description": "",
+          "price": 8.50,
+          "tags": [],
+          "allergens": ["fish"],
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "fish-dishes",
+      "name": "Fish Dishes",
+      "description": "Cooked on charcoal",
+      "items": [
+        {
+          "id": "sea-bass",
+          "name": "Sea Bass",
+          "description": "Rice and salad",
+          "price": 16.90,
+          "tags": ["halal"],
+          "allergens": ["fish"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/abe844dd-124f-45a6-a45b-e9413d28241a.png"
+        },
+        {
+          "id": "calamari-fish-dish",
+          "name": "Calamari Fish Dish",
+          "description": "6 pieces. Chips and salad",
+          "price": 13.90,
+          "tags": [],
+          "allergens": ["fish"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/6fbc8a2a-4f26-4c6e-87a9-f6c658580197.jpg"
+        },
+        {
+          "id": "fish-and-chips",
+          "name": "Fish & Chips (Fresh Cod)",
+          "description": "Chips and salad",
+          "price": 11.90,
+          "tags": [],
+          "allergens": ["fish", "gluten"],
+          "image": ""
+        },
+        {
+          "id": "salmon",
+          "name": "Salmon",
+          "description": "Rice and salad",
+          "price": 14.90,
+          "tags": ["halal"],
+          "allergens": ["fish"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/099190e3-01cc-43e5-b70b-5257b93f0cab.png"
+        },
+        {
+          "id": "mackerel",
+          "name": "Mackerel",
+          "description": "Rice and salad",
+          "price": 9.90,
+          "tags": ["halal"],
+          "allergens": ["fish"],
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "kebabs",
+      "name": "Kebabs",
+      "description": "All kebabs served with rice or fries and salad",
+      "items": [
+        {
+          "id": "lamb-shawarma",
+          "name": "Lamb Shawarma",
+          "description": "Specially prepared marinated lamb cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          "price": 14.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/61628ff1-960c-4587-b400-3776275204e1.png"
+        },
+        {
+          "id": "lamb-shish",
+          "name": "Lamb Shish",
+          "description": "Marinated cubes of lamb grilled on skewers with rice and salad",
+          "price": 18.90,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/062c48f1-df64-4a90-9474-f386ed86fef9.jpg"
+        },
+        {
+          "id": "adana-kofte",
+          "name": "Adana Kofte",
+          "description": "Minced lamb meat grilled on skewers with rice and salad",
+          "price": 16.90,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/254ebec3-9123-4bed-aeed-0ea4ed15e8bf.jpg"
+        },
+        {
+          "id": "lamb-chops",
+          "name": "Lamb Chops",
+          "description": "4 pieces. Seasoned tender lamb chops grilled with rice and salad",
+          "price": 20.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/4cf65bd6-1e46-48d7-8e6f-2293eb98499c.png"
+        },
+        {
+          "id": "lamb-ribs",
+          "name": "Lamb Ribs",
+          "description": "6 pieces. Grilled lamb ribs with rice and salad",
+          "price": 18.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/252b6038-a971-4176-998a-798b5c8549b0.png"
+        },
+        {
+          "id": "chicken-shish",
+          "name": "Chicken Shish",
+          "description": "Chicken seasoned and grilled on skewers with rice and salad",
+          "price": 15.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/ea12f5fb-704e-44b6-b01e-f68e54d5d634.jpg"
+        },
+        {
+          "id": "chicken-shawarma",
+          "name": "Chicken Shawarma",
+          "description": "Specially prepared marinated chicken cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          "price": 13.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/a1d8312f-f82e-4af7-85d8-439a9942a1aa.png"
+        },
+        {
+          "id": "chicken-wings",
+          "name": "Chicken Wings",
+          "description": "8 pieces. Grilled chicken wings with rice and salad",
+          "price": 13.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/69195baf-4ca0-4691-9200-e988d5d30ad5.jpg"
+        },
+        {
+          "id": "mixed-shawarma",
+          "name": "Mixed Shawarma",
+          "description": "Chicken, lamb with rice and salad",
+          "price": 14.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/f59abab5-ab04-4207-be25-7a4fe64be1b4.png"
+        },
+        {
+          "id": "mixed-shish",
+          "name": "Mixed Shish",
+          "description": "Chicken, lamb with rice and salad",
+          "price": 19.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/b175047e-c0d7-494d-a41c-4a53c05b19b9.jpg"
+        },
+        {
+          "id": "mixed-kebab",
+          "name": "Mixed Kebab",
+          "description": "Adana köfte (lamb mince), chicken wings with rice and salad",
+          "price": 21.90,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/f4a352f4-1157-433c-a901-1003082698f2.png"
+        },
+        {
+          "id": "famous-cypriot-kebab",
+          "name": "Famous Cypriot Kebab",
+          "description": "Lamb mince, onion, parsley, mixed seasoning wrapped in lamb caul fat, 4 pieces, served with rice and salad",
+          "price": 20.90,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/d8c2a077-897a-44de-b30f-76cbf1a87fbe.jpg"
+        }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": "Wraps",
+      "description": "Delicious wraps filled with your favorite proteins and fresh ingredients",
+      "items": [
+        {
+          "id": "lamb-shawarma-wrap",
+          "name": "Lamb Shawarma Wrap",
+          "description": "Specially prepared marinated lamb cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          "price": 9.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          "id": "chicken-shawarma-wrap",
+          "name": "Chicken Shawarma Wrap",
+          "description": "Specially prepared marinated chicken cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          "price": 8.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          "id": "mixed-shawarma-wrap",
+          "name": "Mixed Shawarma Wrap",
+          "description": "Specially prepared marinated lamb and chicken cooked spit roast with rice and salad. Made daily on-site (no artificial flavoring, coloring, additives, and preservatives)",
+          "price": 9.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/a1a3e4df-b7a2-4173-a1f4-8f9b0c2e8e00.png"
+        },
+        {
+          "id": "chicken-shish-wrap",
+          "name": "Chicken Shish Wrap",
+          "description": "",
+          "price": 12.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/a1a3e4df-b7a2-4173-a1f4-8f9b0c2e8e00.png"
+        },
+        {
+          "id": "adana-kofte-wrap",
+          "name": "Adana Kofte Wrap",
+          "description": "",
+          "price": 12.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/a1a3e4df-b7a2-4173-a1f4-8f9b0c2e8e00.png"
+        },
+        {
+          "id": "lamb-shish-wrap",
+          "name": "Lamb Shish Wrap",
+          "description": "",
+          "price": 12.95,
+          "tags": ["halal"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+        },
+        {
+          "id": "halloumi-wrap",
+          "name": "Halloumi Wrap",
+          "description": "",
+          "price": 9.50,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/60fe42ff-ea79-4e45-b805-f583b9235330.png"
+        },
+        {
+          "id": "falafel-wrap",
+          "name": "Falafel Wrap",
+          "description": "",
+          "price": 8.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/60fe42ff-ea79-4e45-b805-f583b9235330.png"
+        },
+        {
+          "id": "halloumi-and-falafel-wrap",
+          "name": "Halloumi and Falafel Wrap",
+          "description": "",
+          "price": 9.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/60fe42ff-ea79-4e45-b805-f583b9235330.png"
+        }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Salads",
+      "description": "Fresh and vibrant traditional Anatolian salads",
+      "items": [
+        {
+          "id": "acili-ezme-salata",
+          "name": "Acili Ezme Salata",
+          "description": "Finely diced tomato, onion, pepper salad with spices and lemon juice",
+          "price": 5.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "coban-salata",
+          "name": "Coban Salata",
+          "description": "Finely diced tomato, green pepper, cucumber, onion, parsley, olive oil and lemon juice",
+          "price": 7.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/7ce160df-72a1-49d2-81af-85e0ac64cea9.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vegetarian-dishes",
+      "name": "Vegetarian Dishes",
+      "description": "Delicious vegetarian main dishes served with rice and salad",
+      "items": [
+        {
+          "id": "halloumi-dish",
+          "name": "Halloumi",
+          "description": "With rice and salad",
+          "price": 10.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c0fab3f5-3dba-4d36-9dbd-901411f1a20c.jpg"
+        },
+        {
+          "id": "halloumi-and-falafel-dish",
+          "name": "Halloumi and Falafel",
+          "description": "With rice and salad",
+          "price": 10.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/519aef2f-949f-4c0b-97c9-8d70719b7483.jpg"
+        },
+        {
+          "id": "falafel-dish",
+          "name": "Falafel",
+          "description": "With rice and salad",
+          "price": 10.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/cf770702-21db-490d-a953-fe3ed3fb4863.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "description": "Perfect accompaniments to complement your meal",
+      "items": [
+        {
+          "id": "olives-and-bread",
+          "name": "Olives and Bread",
+          "description": "",
+          "price": 3.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": ["gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/58e247e3-768b-420b-a3bd-6a022b052712.jpg"
+        },
+        {
+          "id": "chips-loaded-with-cheese",
+          "name": "Chips Loaded with Cheese",
+          "description": "",
+          "price": 4.90,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/d76bbbd8-9f8b-45f5-94db-ae4141c54983.png"
+        },
+        {
+          "id": "chips",
+          "name": "Chips",
+          "description": "",
+          "price": 3.90,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/b4fa1ecf-f992-4cb0-bde7-f1085a319e1b.png"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "description": "Traditional Anatolian sweets to end your meal perfectly",
+      "items": [
+        {
+          "id": "baklava",
+          "name": "Baklava",
+          "description": "4 pieces",
+          "price": 7.50,
+          "tags": ["vegetarian"],
+          "allergens": ["gluten", "dairy", "nuts"],
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "description": "Refreshing beverages and traditional Anatolian drinks",
+      "items": [
+        {
+          "id": "red-bull",
+          "name": "Red Bull",
+          "description": "250 ml",
+          "price": 2.90,
+          "tags": [],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "sparkling-water",
+          "name": "Sparkling Water",
+          "description": "500 ml",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "diet-coke",
+          "name": "Diet Coke",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "sprite",
+          "name": "Sprite",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "rio-tropical",
+          "name": "Rio Tropical",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "ayran",
+          "name": "Ayran",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegetarian"],
+          "allergens": ["dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/04076596-0c1f-4c8f-966a-86aea181dba8.jpg"
+        },
+        {
+          "id": "still-water",
+          "name": "Still Water",
+          "description": "500 ml",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "coca-cola",
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "fanta",
+          "name": "Fanta",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "coca-cola-zero",
+          "name": "Coca-Cola Zero",
+          "description": "",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": ""
+        },
+        {
+          "id": "turnib-salgam-suyu",
+          "name": "Turnib Salgam Suyu",
+          "description": "300 ml. Ingredients: carrot, turnip, bulgur, salt, water, garlic, hot pepper. Acili/Spicy",
+          "price": 2.50,
+          "tags": ["vegan", "vegetarian"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/422e4f86-064d-4c41-a314-535cf71f5cb8.png"
+        }
+      ]
+    },
+    {
+      "id": "alcohol",
+      "name": "Alcohol",
+      "description": "Anatolian beers and wines",
+      "items": [
+        {
+          "id": "tuborg",
+          "name": "Tuborg",
+          "description": "500 ml, ABV 5%. Anatolian beer",
+          "price": 4.90,
+          "tags": ["alcohol"],
+          "allergens": ["gluten"],
+          "image": ""
+        },
+        {
+          "id": "turkish-white-wine",
+          "name": "Anatolian White Vine",
+          "description": "75 cl, ABV 13%",
+          "price": 19.90,
+          "tags": ["alcohol"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/d9a98d56-1299-4ac3-b06d-9862c7f3069f.jpg"
+        },
+        {
+          "id": "turkish-rose-wine",
+          "name": "Anatolian Rose Vine",
+          "description": "75 cl, ABV 13%",
+          "price": 19.90,
+          "tags": ["alcohol"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/62e1b492-95fb-4dcc-ba54-7c27617de440.jpg"
+        },
+        {
+          "id": "efes",
+          "name": "Efes",
+          "description": "500 ml, ABV 5%. Anatolian beer",
+          "price": 4.90,
+          "tags": ["alcohol"],
+          "allergens": ["gluten"],
+          "image": ""
+        },
+        {
+          "id": "turkish-red-wine",
+          "name": "Anatolian Red Vine",
+          "description": "75 cl, ABV 13%",
+          "price": 19.90,
+          "tags": ["alcohol"],
+          "allergens": [],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/48ecd23e-e8d2-450d-8c85-4e5768042268.jpg"
+        },
+        {
+          "id": "corona-beer",
+          "name": "Corona Beer",
+          "description": "330 ml, ABV 4.5%",
+          "price": 3.95,
+          "tags": ["alcohol"],
+          "allergens": ["gluten"],
+          "image": ""
+        }
+      ]
+    },
+    {
+      "id": "specials",
+      "name": "Specials",
+      "description": "Special large sharing platters and signature dishes",
+      "items": [
+        {
+          "id": "jumbo-platter",
+          "name": "Jumbo Platter for 6 People",
+          "description": "Lamb shish, chicken shish, Adana köfte, lamb ribs, chicken wings, lamb chops, lamb shawarma, chicken shawarma, seftali kebab with rice, salad, and bread",
+          "price": 118.90,
+          "tags": ["halal"],
+          "allergens": ["gluten", "dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/2416190c-94fb-4955-8923-7387b8d756e5.png"
+        },
+        {
+          "id": "chicken-special",
+          "name": "Chicken Special for 4 People",
+          "description": "Chicken shish, chicken wings, and chicken shawarma with rice, salad, and bread",
+          "price": 59.90,
+          "tags": ["halal"],
+          "allergens": ["gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/01cb0fe4-08a0-44c4-8533-374c976e644a.jpg"
+        },
+        {
+          "id": "fish-platter",
+          "name": "Fish Platters to Share For 2",
+          "description": "Prawns (6pcs), Calamari (4 pcs), Octopus (1pc), One Large Sea Bass + Chips and Salad",
+          "price": 39.90,
+          "tags": ["halal"],
+          "allergens": ["fish", "shellfish", "gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/01cb0fe4-08a0-44c4-8533-374c976e644a.jpg"
+        },
+        {
+          "id": "special-kebab",
+          "name": "Special Kebab for 4 People",
+          "description": "Lamb shish, chicken shish, Adana kofte, lamb ribs, chicken wings, lamb shawarma, chicken shawarma, seftali kebab with rice, salad, and bread",
+          "price": 79.80,
+          "tags": ["halal"],
+          "allergens": ["gluten", "dairy"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/01cb0fe4-08a0-44c4-8533-374c976e644a.jpg"
+        },
+        {
+          "id": "platters-to-share",
+          "name": "Platters to Share for 2 People",
+          "description": "Adana kofte, chicken shish, lamb shish, chicken wing, lamb ribs, lamb shawarma, chicken shawarma, seftali kebab, with rice, salad, and bread",
+          "price": 44.80,
+          "tags": ["halal"],
+          "allergens": ["gluten"],
+          "image": "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/01cb0fe4-08a0-44c4-8533-374c976e644a.jpg"
+        }
+      ]
+    }
+  ]
+}

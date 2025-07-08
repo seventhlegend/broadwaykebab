@@ -1,0 +1,65 @@
+
+{
+  "dietary": [
+    {
+      "id": "vegan",
+      "label": "Vegan",
+      "icon": "vegan",
+      "color": "bg-green-100 text-green-800",
+      "description": "No animal products"
+    },
+    {
+      "id": "vegetarian", 
+      "label": "Vegetarian",
+      "icon": "vegan",
+      "color": "bg-emerald-100 text-emerald-800",
+      "description": "No meat or fish"
+    },
+    {
+      "id": "gluten-free",
+      "label": "Gluten Free",
+      "icon": "check",
+      "color": "bg-blue-100 text-blue-800",
+      "description": "No gluten-containing ingredients"
+    },
+    {
+      "id": "spicy",
+      "label": "Spicy",
+      "icon": "star",
+      "color": "bg-red-100 text-red-800",
+      "description": "Contains spicy ingredients"
+    }
+  ],
+  "allergens": [
+    {
+      "id": "gluten",
+      "label": "Contains Gluten",
+      "warning": true
+    },
+    {
+      "id": "dairy",
+      "label": "Contains Dairy", 
+      "warning": true
+    },
+    {
+      "id": "nuts",
+      "label": "Contains Nuts",
+      "warning": true
+    },
+    {
+      "id": "sesame",
+      "label": "Contains Sesame",
+      "warning": true
+    },
+    {
+      "id": "eggs",
+      "label": "Contains Eggs",
+      "warning": true
+    },
+    {
+      "id": "fish",
+      "label": "Contains Fish",
+      "warning": true
+    }
+  ]
+}
