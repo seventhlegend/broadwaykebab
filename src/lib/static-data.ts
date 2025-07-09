@@ -456,6 +456,86 @@ export const STATIC_MENU = {
         }
       ]
     },
+     {
+      id: "seafood",
+      name: "Seafood",
+      description: "Fresh and delicious seafood dishes",
+      items: [
+       
+        {
+          id: "prawns-starter",
+          name: "Prawns Starter",
+          description: "6 pieces of grilled prawns served with salad",
+          price: 8.50,
+          tags: ["seafood"],
+          allergens: ["shellfish"],
+          image: ""
+        },
+        {
+          id: "calamari-starter",
+          name: "Calamari Starter",
+          description: "4 pieces of crispy calamari served with salad",
+          price: 7.50,
+          tags: ["seafood"],
+          allergens: ["gluten", "dairy"],
+          image: ""
+        },
+        {
+          id: "octopus-starter",
+          name: "Octopus Starter",
+          description: "1 piece of grilled octopus served with salad",
+          price: 8.50,
+          tags: ["seafood"],
+          allergens: ["fish", "shellfish"],
+          image: ""
+        },
+        {
+          id: "seafood-sharing-starters",
+          name: "Seafood Sharing Starters",
+          description: "A selection of our finest seafood starters",
+          price: 22.50,
+          tags: ["seafood"],
+          allergens: ["shellfish", "gluten"],
+          image: ""
+        },
+        {
+          id: "mackerel",
+          name: "Mackerel",
+          description: "Grilled mackerel served with chips and salad",
+          price: 13.90,
+          tags: ["seafood"],
+          allergens: ["fish"],
+          image: ""
+        },
+        {
+          id: "large-sea-bass",
+          name: "Large Sea Bass",
+          description: "Grilled large sea bass served with chips and salad",
+          price: 17.90,
+          tags: ["seafood"],
+          allergens: ["fish"],
+          image: ""
+        },
+        {
+          id: "salmon",
+          name: "Salmon",
+          description: "Grilled salmon served with chips and salad",
+          price: 15.90,
+          tags: ["seafood"],
+          allergens: ["fish"],
+          image: ""
+        },
+        {
+          id: "calamari-main",
+          name: "Calamari Main",
+          description: "Crispy calamari served with chips and salad",
+          price: 13.90,
+          tags: ["seafood"],
+          allergens: ["gluten", "dairy"],
+          image: ""
+        }
+      ]
+    },
     {
       id: "vegetarian-dishes",
       name: "Vegetarian Dishes",
@@ -635,8 +715,8 @@ export const STATIC_MENU = {
       description: "Traditional Anatolian sweets to end your meal perfectly",
       items: [
         {
-          id: "baklawa",
-          name: "Baklawa",
+          id: "baklava",
+          name: "Baklava",
           description: "Traditional pastry with nuts and honey syrup - 4 pieces",
           price: 7.50,
           tags: ["vegetarian", "traditional"],
@@ -650,24 +730,23 @@ export const STATIC_MENU = {
       name: "Specials",
       description: "Special large sharing platters and signature dishes",
       items: [
-        {
-          id: "mixed-grill-for-2",
-          name: "Mixed Grill for 2 People",
-          description: "Lamb shish, chicken shish, Adana kofte, chicken wings with rice, salad, and bread",
-          price: 44.80,
+      {
+          id: "kebab-platter",
+          name: "Kebab Platter",
+          description: "Minimum Two Persons. Per Person | 24.80. Lamb Skewers, Chicken Wings, Lamb Döner, Chicken Döner, Adana Kebab Skewers, Chicken Skewers, Lamb Chop. Served with salad, bulgur pilaf and bread",
+          price: 24.80,
           tags: ["halal", "signature"],
           allergens: ["gluten"],
-          featured: true,
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/01cb0fe4-08a0-44c4-8533-374c976e644a.jpg"
+          image: ""
         },
         {
-          id: "jumbo-platter",
-          name: "Jumbo Platter for 6 People",
-          description: "Lamb shish, chicken shish, Adana köfte, lamb ribs, chicken wings, lamb chops, lamb shawarma, chicken shawarma with rice, salad, and bread",
-          price: 118.90,
-          tags: ["halal", "signature"],
-          allergens: ["gluten", "dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/2416190c-94fb-4955-8923-7387b8d756e5.png"
+          id: "seafood-platter",
+          name: "Seafood Platter",
+          description: "Prawns (6 pcs), Calamari (4 pcs), Octopus (1 pc), One Large Sea Bass, Chips and Salad",
+          price: 39.90,
+          tags: ["seafood", "signature"],
+          allergens: ["fish", "shellfish", "gluten"],
+          image: ""
         }
       ]
     },
