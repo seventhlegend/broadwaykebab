@@ -191,7 +191,7 @@ export const STATIC_MENU_FEATURED = [
     price: 18.90,
     tags: ["signature", "popular"],
     featured: true,
-    image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/a742c05e-9e4c-4c89-ab7d-ca93b6b5d4ec.jpg"
+    image: ""
   },
   {
     id: "lamb-shish",
@@ -200,7 +200,7 @@ export const STATIC_MENU_FEATURED = [
     price: 16.90,
     tags: ["grilled", "signature"],
     featured: true,
-    image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/5e37f1a8-410a-470a-9d35-68028c33043b.jpg"
+    image: ""
   },
   {
     id: "chicken-wings",
@@ -209,7 +209,7 @@ export const STATIC_MENU_FEATURED = [
     price: 12.90,
     tags: ["popular", "spicy"],
     featured: true,
-    image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+    image: ""
   }
 ];
 
@@ -227,7 +227,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c096fb24-8c16-45be-b8ce-d8d3a84fe9c1.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_humus.jpg"
         },
         {
           id: "baba-ghanoush",
@@ -236,7 +236,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_cacik.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_youghurt.jpg"
         },
         {
           id: "cacik",
@@ -257,13 +257,13 @@ export const STATIC_MENU = {
           image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_vine_leaves.jpg"
         },
         {
-          id: "saksuka",
-          name: "Saksuka",
+          id: "shakshuka",
+          name: "Shakshuka",
           description: "Turkish aubergine in a rich tomato green pepper, garlic",
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/542510af-609c-422f-af28-fed819699b5c.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_shakshuka.jpg"
         },
         {
           id: "olives-and-bread",
@@ -359,7 +359,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/61628ff1-960c-4587-b400-3776275204e1.png"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_lamb_doner.jpg"
         },
         {
           id: "lamb-skewers",
@@ -369,7 +369,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/062c48f1-df64-4a90-9474-f386ed86fef9.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_lamb_shish_kebab.jpg"
         },
         {
           id: "adana-kebab",
@@ -387,7 +387,7 @@ export const STATIC_MENU = {
           price: 19.95,
           tags: ["halal", "premium"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/4cf65bd6-1e46-48d7-8e6f-2293eb98499c.png"
+          image: ""
         },
         {
           id: "chicken-doner",
@@ -396,7 +396,7 @@ export const STATIC_MENU = {
           price: 13.95,
           tags: ["halal", "signature"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/61628ff1-960c-4587-b400-3776275204e1.png"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_doner.jpg"
         },
         {
           id: "chicken-skewers",
@@ -405,7 +405,7 @@ export const STATIC_MENU = {
           price: 15.95,
           tags: ["halal", "popular"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/ea12f5fb-704e-44b6-b01e-f68e54d5d634.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_shish_kebab.jpg"
         },
         {
           id: "chicken-wings",
@@ -415,7 +415,7 @@ export const STATIC_MENU = {
           tags: ["halal", "popular"],
           allergens: [],
           featured: true,
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/69195baf-4ca0-4691-9200-e988d5d30ad5.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_wings.jpg"
         },
         {
           id: "beyti-kebab",
@@ -433,7 +433,7 @@ export const STATIC_MENU = {
           price: 14.95,
           tags: ["halal", "signature"],
           allergens: [],
-          image: ""
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_mix_doner.jpg"
         },
         {
           id: "chicken-and-lamb-mix",
@@ -452,7 +452,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/f4a352f4-1157-433c-a901-1003082698f2.png"
+          image: ""
         }
       ]
     },
@@ -514,7 +514,7 @@ export const STATIC_MENU = {
           price: 17.90,
           tags: ["seafood"],
           allergens: ["fish"],
-          image: ""
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_seabass.jpg"
         },
         {
           id: "salmon",
@@ -548,7 +548,7 @@ export const STATIC_MENU = {
           price: 13.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/c0fab3f5-3dba-4d36-9dbd-901411f1a20c.jpg"
+          image: ""
         },
         {
           id: "falafel-dish",
@@ -557,7 +557,7 @@ export const STATIC_MENU = {
           price: 13.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/cf770702-21db-490d-a953-fe3ed3fb4863.jpg"
+          image: ""
         },
         {
           id: "halloumi-and-falafel-dish",
@@ -583,7 +583,7 @@ export const STATIC_MENU = {
           price: 9.95,
           tags: ["halal"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+          image: ""
         },
         {
           id: "chicken-doner-wrap",
@@ -592,7 +592,7 @@ export const STATIC_MENU = {
           price: 8.95,
           tags: ["halal"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+          image: ""
         },
         {
           id: "halloumi-wrap",
@@ -610,7 +610,7 @@ export const STATIC_MENU = {
           price: 9.90,
           tags: ["halal"],
           allergens: [],
-          image: "https://popmenucloud.com/cdn-cgi/image/width%3D600%2Cheight%3D600%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/cprkufny/aa62d88e-1400-46c2-a203-20e93e506cb8.png"
+          image: ""
         },
         {
           id: "chicken-skewers-wrap",
