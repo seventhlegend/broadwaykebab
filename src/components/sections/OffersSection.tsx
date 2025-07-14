@@ -29,7 +29,7 @@ const offers: Offer[] = [
       "Authentic Anatolian flavour",
     ],
     image:
-      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/tuesday-offer.jpg",
+      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/UK220737_broadway%20bbq_Hero2.jpg",
     icon: <Utensils className="w-6 h-6" />,
     day: "Every Tuesday",
     price: "50% OFF",
