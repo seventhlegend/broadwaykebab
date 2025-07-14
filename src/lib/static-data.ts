@@ -91,7 +91,7 @@ export const STATIC_CONTENT = {
   contact: {
     title: "Visit Us Today",
     address: {
-      street: "Entrance, 29 Tooting High St Broadway Market Tooting",
+      street: "Longmead Road Entrance, 29 Tooting High St Broadway Market Tooting",
       city: "London",
       state: "ENG",
       zip: "SW17 0RJ",
@@ -853,7 +853,6 @@ export const STATIC_MENU = {
           subcategory: [
             { name: "Tuborg (Turkish Beer 500ml)", price: 5.90 },
             { name: "Efes 500ml (Turkish Beer 500ml)", price: 5.90 },
-            { name: "Bomonti (Turkish Beer 500ml)", price: 5.90 },
             { name: "Corona Beer (330ml)", price: 3.50 },
             { name: "Cobra Draft Beer", price: 5.90 }
           ]
