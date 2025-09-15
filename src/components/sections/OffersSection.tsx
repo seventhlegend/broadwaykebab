@@ -17,26 +17,26 @@ interface Offer {
 }
 
 const offers: Offer[] = [
+  // {
+  //   id: 1,
+  //   title: "50% OFF Main Dishes – Every Tuesday!",
+  //   description:
+  //     "Looking for a midweek treat? Come to Broadway Kebab, inside Broadway Market in Tooting, London, and enjoy 50% off all main dishes every Tuesday!",
+  //   details: [
+  //     "Charcoal-grilled chicken, tender lamb, and fresh seafood dishes",
+  //     "Served with your choice of bulgur rice or chips",
+  //     "Fresh salad and flatbread included",
+  //     "Authentic Anatolian flavour",
+  //   ],
+  //   image:
+  //     "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/UK220737_broadway%20bbq_Hero2.jpg",
+  //   icon: <Utensils className="w-6 h-6" />,
+  //   day: "Every Tuesday",
+  //   price: "50% OFF",
+  //   color: "from-red-500 to-pink-600",
+  // },
   {
     id: 1,
-    title: "50% OFF Main Dishes – Every Tuesday!",
-    description:
-      "Looking for a midweek treat? Come to Broadway Kebab, inside Broadway Market in Tooting, London, and enjoy 50% off all main dishes every Tuesday!",
-    details: [
-      "Charcoal-grilled chicken, tender lamb, and fresh seafood dishes",
-      "Served with your choice of bulgur rice or chips",
-      "Fresh salad and flatbread included",
-      "Authentic Anatolian flavour",
-    ],
-    image:
-      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/UK220737_broadway%20bbq_Hero2.jpg",
-    icon: <Utensils className="w-6 h-6" />,
-    day: "Every Tuesday",
-    price: "50% OFF",
-    color: "from-red-500 to-pink-600",
-  },
-  {
-    id: 2,
     title: "Wednesday Special – Cold Starter + Main Course for Just £15!",
     description:
       "Join us every Wednesday at Broadway Kebab, located inside Broadway Market in Tooting, London, and enjoy a delicious deal:",
@@ -55,7 +55,7 @@ const offers: Offer[] = [
     color: "from-green-500 to-emerald-600",
   },
   {
-    id: 3,
+    id: 2,
     title: "Sunday Bottomless Brunch – Only £30 per person!",
     description:
       "Make your Sundays special with our Bottomless Brunch at Broadway Kebab, inside Broadway Market in Tooting, London.",
