@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && cp public/_headers out/ && cp public/_redirects out/ && cp vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack && cp public/_headers out/ && cp public/_redirects out/ && cp vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
     "release:zip": "pnpm run build && rm -rf out/images/menu && ZIP_NAME=\"broadwaykebab-static-build-$(date +%Y%m%d-%H%M).zip\" && rm -f \"$ZIP_NAME\" && (cd out && zip -r \"../$ZIP_NAME\" .) && echo \"Created $ZIP_NAME\"",
     "start": "pnpm dlx serve out -l 3000",
     "lint": "next lint",
@@ -19,9 +19,9 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.511.0",
-    "next": "15.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "16.2.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -30,7 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "16.2.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
