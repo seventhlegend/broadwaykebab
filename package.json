@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp public/_headers out/ && cp public/_redirects out/ && cp public/vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
+    "build": "next build && cp public/_headers out/ && cp public/_redirects out/ && cp vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
     "release:zip": "pnpm run build && rm -rf out/images/menu && ZIP_NAME=\"broadwaykebab-static-build-$(date +%Y%m%d-%H%M).zip\" && rm -f \"$ZIP_NAME\" && (cd out && zip -r \"../$ZIP_NAME\" .) && echo \"Created $ZIP_NAME\"",
     "start": "pnpm dlx serve out -l 3000",
     "lint": "next lint",
