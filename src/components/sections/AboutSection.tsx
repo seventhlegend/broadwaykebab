@@ -4,6 +4,12 @@ import { Star, Utensils, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { LoadingSkeleton } from "@/components/common/LoadingSkeleton";
 
+const ABOUT_FEATURE_CARD_CLASS =
+  "text-center p-8 border-2 border-amber-200 hover:border-amber-300 transition-colors";
+const ABOUT_FEATURE_ICON_WRAPPER_CLASS =
+  "w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4";
+const ABOUT_FEATURE_ICON_CLASS = "w-8 h-8 text-amber-700";
+
 interface AboutFeature {
   title: string;
   description: string;
@@ -56,13 +62,10 @@ export default function AboutSection({ about }: AboutSectionProps) {
               const IconComponent =
                 iconMap[feature.icon as keyof typeof iconMap] || Star;
               return (
-                <Card
-                  key={index}
-                  className="text-center p-8 border-2 border-amber-200 hover:border-amber-300 transition-colors"
-                >
+                <Card key={index} className={ABOUT_FEATURE_CARD_CLASS}>
                   <CardContent className="p-0">
-                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-amber-700" />
+                    <div className={ABOUT_FEATURE_ICON_WRAPPER_CLASS}>
+                      <IconComponent className={ABOUT_FEATURE_ICON_CLASS} />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {feature.title}

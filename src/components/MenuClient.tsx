@@ -17,6 +17,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { STATIC_MENU } from "@/lib/static-data";
 
+const MENU_CATEGORY_HEADER_CLASS =
+  "bg-amber-50 p-6 cursor-pointer hover:bg-amber-100 transition-colors";
+const MENU_CATEGORY_CHEVRON_CLASS = "w-6 h-6 text-amber-600";
+const MENU_FILTER_TAG_SELECTED_CLASS =
+  "bg-amber-600 hover:bg-amber-700 text-white";
+const MENU_FILTER_TAG_UNSELECTED_CLASS = "hover:bg-amber-50";
+const MENU_TAG_BADGE_CLASS = "text-xs";
+
 interface MenuItem {
   id: string;
   name: string;
@@ -80,14 +88,14 @@ export default function MenuClient() {
     setOpenCategories((prev) =>
       prev.includes(categoryId)
         ? prev.filter((id) => id !== categoryId)
-        : [...prev, categoryId]
+        : [...prev, categoryId],
     );
   };
 
   // Toggle tag filter
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -161,8 +169,8 @@ export default function MenuClient() {
                     key={tag}
                     className={`cursor-pointer transition-colors ${
                       selectedTags.includes(tag)
-                        ? "bg-amber-600 hover:bg-amber-700 text-white"
-                        : "hover:bg-amber-50"
+                        ? MENU_FILTER_TAG_SELECTED_CLASS
+                        : MENU_FILTER_TAG_UNSELECTED_CLASS
                     }`}
                     onClick={() => toggleTag(tag)}
                   >
@@ -181,7 +189,7 @@ export default function MenuClient() {
             <span className="font-medium">
               {filteredCategories.reduce(
                 (total: number, cat: any) => total + cat.items.length,
-                0
+                0,
               )}
             </span>{" "}
             items
@@ -220,7 +228,7 @@ export default function MenuClient() {
               return (
                 <Card key={category.id} className="overflow-hidden">
                   <div
-                    className="bg-amber-50 p-6 cursor-pointer hover:bg-amber-100 transition-colors"
+                    className={MENU_CATEGORY_HEADER_CLASS}
                     onClick={() => toggleCategory(category.id)}
                   >
                     <div className="flex items-center justify-between">
@@ -235,9 +243,9 @@ export default function MenuClient() {
                         </p>
                       </div>
                       {isOpen ? (
-                        <ChevronUp className="w-6 h-6 text-amber-600" />
+                        <ChevronUp className={MENU_CATEGORY_CHEVRON_CLASS} />
                       ) : (
-                        <ChevronDown className="w-6 h-6 text-amber-600" />
+                        <ChevronDown className={MENU_CATEGORY_CHEVRON_CLASS} />
                       )}
                     </div>
                   </div>
@@ -281,7 +289,7 @@ export default function MenuClient() {
                                       £{drink.price.toFixed(2)}
                                     </span>
                                   </div>
-                                )
+                                ),
                               )}
                             </div>
                           </div>
@@ -297,7 +305,7 @@ export default function MenuClient() {
             return (
               <Card key={category.id} className="overflow-hidden">
                 <div
-                  className="bg-amber-50 p-6 cursor-pointer hover:bg-amber-100 transition-colors"
+                  className={MENU_CATEGORY_HEADER_CLASS}
                   onClick={() => toggleCategory(category.id)}
                 >
                   <div className="flex items-center justify-between">
@@ -312,9 +320,9 @@ export default function MenuClient() {
                       </p>
                     </div>
                     {isOpen ? (
-                      <ChevronUp className="w-6 h-6 text-amber-600" />
+                      <ChevronUp className={MENU_CATEGORY_CHEVRON_CLASS} />
                     ) : (
-                      <ChevronDown className="w-6 h-6 text-amber-600" />
+                      <ChevronDown className={MENU_CATEGORY_CHEVRON_CLASS} />
                     )}
                   </div>
                 </div>
@@ -365,7 +373,10 @@ export default function MenuClient() {
                             {/* Tags */}
                             <div className="flex flex-wrap gap-2 mb-4">
                               {item.tags.slice(0, 2).map((tag: string) => (
-                                <Badge key={tag} className="text-xs">
+                                <Badge
+                                  key={tag}
+                                  className={MENU_TAG_BADGE_CLASS}
+                                >
                                   {tag === "vegetarian" && (
                                     <Leaf className="w-3 h-3 mr-1" />
                                   )}
@@ -379,7 +390,7 @@ export default function MenuClient() {
                                 </Badge>
                               ))}
                               {item.tags.length > 2 && (
-                                <Badge className="text-xs">
+                                <Badge className={MENU_TAG_BADGE_CLASS}>
                                   +{item.tags.length - 2} more
                                 </Badge>
                               )}

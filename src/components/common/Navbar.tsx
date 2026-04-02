@@ -6,6 +6,13 @@ import { useState } from "react";
 import { Menu, X, CalendarDays } from "lucide-react";
 import { STATIC_CONTENT } from "@/lib/static-data";
 
+const NAVBAR_BRAND_LOGO_CLASS =
+  "text-3xl font-extrabold tracking-tight bg-gradient-to-r from-amber-700 via-orange-600 to-red-600 bg-clip-text text-transparent drop-shadow-sm";
+const NAVBAR_BRAND_LOGO_HOVER_CLASS =
+  "hover:from-amber-800 hover:via-orange-700 hover:to-red-700 transition-all duration-300";
+const NAVBAR_CTA_CLASS =
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-amber-700 text-white hover:bg-amber-800 h-10 px-4 py-2";
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,7 +30,9 @@ export default function Navbar() {
       <nav className="sticky top-0 bg-white backdrop-blur-sm z-50 border-b border-amber-200 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-amber-700 via-orange-600 to-red-600 bg-clip-text text-transparent hover:from-amber-800 hover:via-orange-700 hover:to-red-700 transition-all duration-300 drop-shadow-sm">
+            <span
+              className={`${NAVBAR_BRAND_LOGO_CLASS} ${NAVBAR_BRAND_LOGO_HOVER_CLASS}`}
+            >
               Broadway Kebab
             </span>
           </Link>
@@ -45,7 +54,7 @@ export default function Navbar() {
             ))}
             <a
               href={STATIC_CONTENT.navbar.callButton.href}
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-amber-700 text-white hover:bg-amber-800 h-10 px-4 py-2"
+              className={NAVBAR_CTA_CLASS}
             >
               <CalendarDays className="w-4 h-4 mr-2" />
               {STATIC_CONTENT.navbar.callButton.text}
@@ -84,9 +93,7 @@ export default function Navbar() {
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center space-x-2">
-              <span className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-amber-700 via-orange-600 to-red-600 bg-clip-text text-transparent drop-shadow-sm">
-                Broadway Kebab
-              </span>
+              <span className={NAVBAR_BRAND_LOGO_CLASS}>Broadway Kebab</span>
             </div>
             <button
               onClick={closeMobileMenu}
@@ -117,7 +124,7 @@ export default function Navbar() {
               <a
                 href={STATIC_CONTENT.navbar.callButton.href}
                 onClick={closeMobileMenu}
-                className="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-amber-700 text-white hover:bg-amber-800 h-10 px-4 py-2"
+                className={`w-full ${NAVBAR_CTA_CLASS}`}
               >
                 <CalendarDays className="w-4 h-4 mr-2" />
                 {STATIC_CONTENT.navbar.callButton.text}

@@ -6,6 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LoadingSkeleton } from "@/components/common/LoadingSkeleton";
 
+const CONTACT_ICON_CLASS = "w-6 h-6 text-amber-700 mt-1";
+const CONTACT_LINK_CLASS =
+  "text-amber-700 hover:text-amber-800 font-medium inline-block";
+const CONTACT_ACTION_BUTTON_CLASS =
+  "border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white w-full";
+const CONTACT_PRIMARY_BUTTON_CLASS = "bg-amber-700 hover:bg-amber-800 w-full";
+
 interface ContactInfo {
   title: string;
   address: {
@@ -64,7 +71,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
               <Card className="p-8">
                 <CardContent className="p-0 space-y-6">
                   <div className="flex items-start space-x-4">
-                    <MapPin className="w-6 h-6 text-amber-700 mt-1" />
+                    <MapPin className={CONTACT_ICON_CLASS} />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         Address
@@ -79,7 +86,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                         href={contact.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-amber-700 hover:text-amber-800 font-medium mt-2 inline-block"
+                        className={`${CONTACT_LINK_CLASS} mt-2`}
                       >
                         Get Directions →
                       </a>
@@ -87,7 +94,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Phone className="w-6 h-6 text-amber-700 mt-1" />
+                    <Phone className={CONTACT_ICON_CLASS} />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         Phone & WhatsApp
@@ -104,7 +111,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                         href={`https://wa.me/${contact.whatsapp}?text=${encodedMessage}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-amber-700 hover:text-amber-800 font-medium mt-1 inline-block"
+                        className={`${CONTACT_LINK_CLASS} mt-1`}
                       >
                         Message on WhatsApp →
                       </a>
@@ -112,7 +119,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Clock className="w-6 h-6 text-amber-700 mt-1" />
+                    <Clock className={CONTACT_ICON_CLASS} />
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         Hours
@@ -156,14 +163,14 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/booking" className="flex-1">
-                      <Button className="bg-amber-700 hover:bg-amber-800 w-full">
+                      <Button className={CONTACT_PRIMARY_BUTTON_CLASS}>
                         Book a Table
                       </Button>
                     </Link>
                     <Link href="/menu" className="flex-1">
                       <Button
                         variant="outline"
-                        className="border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white w-full"
+                        className={CONTACT_ACTION_BUTTON_CLASS}
                       >
                         View Menu
                       </Button>
@@ -171,7 +178,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                     <a href={`tel:${contact.phone}`} className="flex-1">
                       <Button
                         variant="outline"
-                        className="border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white w-full"
+                        className={CONTACT_ACTION_BUTTON_CLASS}
                       >
                         <Phone className="w-4 h-4 mr-2" />
                         Call

@@ -3,6 +3,12 @@
 import { Star } from "lucide-react";
 import { TestimonialSkeleton } from "@/components/common/LoadingSkeleton";
 
+const TESTIMONIALS_SECTION_GRADIENT_CLASS =
+  "py-20 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500";
+const TESTIMONIALS_MUTED_ORANGE_TEXT_CLASS = "text-orange-100";
+const TESTIMONIALS_BADGE_CLASS =
+  "px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full";
+
 interface Testimonial {
   id: number;
   name: string;
@@ -23,7 +29,7 @@ export default function TestimonialsSection({
 }: TestimonialsSectionProps) {
   if (!testimonials || testimonials.length === 0) {
     return (
-      <section className="py-20 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500">
+      <section className={TESTIMONIALS_SECTION_GRADIENT_CLASS}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="h-10 bg-white/20 rounded-lg w-80 mx-auto mb-4 animate-pulse"></div>
@@ -40,7 +46,7 @@ export default function TestimonialsSection({
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500">
+    <section className={TESTIMONIALS_SECTION_GRADIENT_CLASS}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Google Reviews</h2>
@@ -54,9 +60,11 @@ export default function TestimonialsSection({
               ))}
             </div>
             <span className="text-lg font-semibold text-white">4.9</span>
-            <span className="text-orange-100">(346+ reviews)</span>
+            <span className={TESTIMONIALS_MUTED_ORANGE_TEXT_CLASS}>
+              (346+ reviews)
+            </span>
           </div>
-          <p className="text-lg text-orange-100">
+          <p className={`text-lg ${TESTIMONIALS_MUTED_ORANGE_TEXT_CLASS}`}>
             What our customers say about us
           </p>
         </div>
@@ -114,10 +122,7 @@ export default function TestimonialsSection({
                 {testimonial.badges && testimonial.badges.length > 0 && (
                   <div className="flex gap-1 mt-3">
                     {testimonial.badges.map((badge, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full"
-                      >
+                      <span key={index} className={TESTIMONIALS_BADGE_CLASS}>
                         {badge}
                       </span>
                     ))}
@@ -129,7 +134,7 @@ export default function TestimonialsSection({
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-orange-100 mb-4">
+          <p className={`${TESTIMONIALS_MUTED_ORANGE_TEXT_CLASS} mb-4`}>
             Join hundreds of satisfied customers
           </p>
           <div className="flex items-center justify-center gap-2">

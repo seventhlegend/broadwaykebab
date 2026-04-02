@@ -1,8 +1,52 @@
 @import "tailwindcss";
 
 :root {
+  /* Semantic theme tokens (active) */
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-surface-page: #f9fafb;
+  --color-surface-card: #ffffff;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  /* Brand palette (active: amber) */
+  --color-brand-50: #fffbeb;
+  --color-brand-100: #fef3c7;
+  --color-brand-200: #fde68a;
+  --color-brand-300: #fcd34d;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #d97706;
+  --color-brand-700: #b45309;
+  --color-brand-800: #92400e;
+  --color-brand-900: #78350f;
+
+  /* Future brand palette scaffold (inactive until class migration) */
+  --color-brand-next-50: #fffbeb;
+  --color-brand-next-100: #fef3c7;
+  --color-brand-next-200: #fde68a;
+  --color-brand-next-300: #fcd34d;
+  --color-brand-next-400: #fbbf24;
+  --color-brand-next-500: #f59e0b;
+  --color-brand-next-600: #d97706;
+  --color-brand-next-700: #b45309;
+  --color-brand-next-800: #92400e;
+  --color-brand-next-900: #78350f;
+
+  --color-accent-orange-600: #ea580c;
+  --color-accent-red-600: #dc2626;
+
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+
+  --color-border-strong: #ffffff;
+  --color-shadow-1: rgba(0, 0, 0, 0.1);
+  --color-shadow-2: rgba(0, 0, 0, 0.04);
+
   --font-sans: "Inter", sans-serif;
   --font-serif: "Playfair Display", serif;
 }
@@ -11,6 +55,11 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-surface-page: #030712;
+    --color-surface-card: #111827;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-text-muted: #9ca3af;
   }
 }
 
@@ -28,7 +77,12 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(to bottom right, #78350f, #92400e, #a16207);
+  background: linear-gradient(
+    to bottom right,
+    var(--color-brand-900),
+    var(--color-brand-800),
+    var(--color-brand-700)
+  );
 }
 
 /* Hero image styles */
@@ -82,25 +136,25 @@ body {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  border: 2px solid white !important;
+  box-shadow: 0 10px 25px -5px var(--color-shadow-1), 0 10px 10px -5px var(--color-shadow-2) !important;
+  border: 2px solid var(--color-border-strong) !important;
   transition: all 0.3s ease !important;
   text-decoration: none !important;
 }
 
 .floating-button-phone {
-  background-color: #b45309 !important;
-  color: white !important;
+  background-color: var(--color-brand-700) !important;
+  color: var(--color-text-inverse) !important;
 }
 
 .floating-button-phone:hover {
-  background-color: #92400e !important;
+  background-color: var(--color-brand-800) !important;
   transform: scale(1.05) !important;
 }
 
 .floating-button-booking {
   background-color: #1f2937 !important;
-  color: white !important;
+  color: var(--color-text-inverse) !important;
 }
 
 .floating-button-booking:hover {
@@ -109,11 +163,11 @@ body {
 }
 
 .floating-button-whatsapp {
-  background-color: #16a34a !important;
-  color: white !important;
+  background-color: var(--color-success-600) !important;
+  color: var(--color-text-inverse) !important;
 }
 
 .floating-button-whatsapp:hover {
-  background-color: #15803d !important;
+  background-color: var(--color-success-700) !important;
   transform: scale(1.05) !important;
 }

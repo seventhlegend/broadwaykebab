@@ -255,9 +255,24 @@ Icerik degisikligi sonrasi onerilen adimlar:
 2. pnpm run build
 3. / ve /menu sayfalarini manuel kontrol et
 
-## 14. Sık Karsilasilan Sorunlar
+## 14. Tema Dokumantasyonu
 
-### 14.1 Temiz Kurulum
+Tema gecisi ile ilgili tum operasyon dosyalari tek bir dizin altinda toplandi:
+
+- [docs/theme/README.md](docs/theme/README.md)
+
+Ana dokumanlar:
+
+- Master durum takibi: [docs/theme/checklists/theme-master-checklist.md](docs/theme/checklists/theme-master-checklist.md)
+- Visual regression checklist: [docs/theme/checklists/visual-regression-checklist.md](docs/theme/checklists/visual-regression-checklist.md)
+- Visual baseline manifest: [docs/theme/checklists/visual-baseline-manifest.md](docs/theme/checklists/visual-baseline-manifest.md)
+- Semantic rollout plani: [docs/theme/plans/semantic-bridge-rollout-plan.md](docs/theme/plans/semantic-bridge-rollout-plan.md)
+- Rollback playbook: [docs/theme/runbooks/theme-rollback-playbook.md](docs/theme/runbooks/theme-rollback-playbook.md)
+- Phase 1 foundation notlari: [docs/theme/foundation/theme-system-phase1.md](docs/theme/foundation/theme-system-phase1.md)
+
+## 15. Sık Karsilasilan Sorunlar
+
+### 15.1 Temiz Kurulum
 
 ```bash
 rm -rf .next out node_modules
@@ -265,7 +280,7 @@ pnpm install
 pnpm run build
 ```
 
-### 14.2 Port Cakismasi
+### 15.2 Port Cakismasi
 
 3000 portu doluysa dev komutunu farkli portla calistir:
 
@@ -273,12 +288,12 @@ pnpm run build
 pnpm exec next dev -p 3001
 ```
 
-### 14.3 Build Sonrasi Dosya Eksigi
+### 15.3 Build Sonrasi Dosya Eksigi
 
 Build komutu, deploy dosyalarini out klasorune kopyalar.
 CI veya lokal ortamda copy adimlarinin atlanmadigindan emin ol.
 
-## 15. Komut Ozeti
+## 16. Komut Ozeti
 
 ```bash
 pnpm install

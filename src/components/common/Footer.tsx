@@ -2,6 +2,13 @@
 
 import { STATIC_CONTENT } from "@/lib/static-data";
 
+const FOOTER_MUTED_TEXT_CLASS = "text-gray-400";
+const FOOTER_MUTED_LINK_CLASS =
+  "text-gray-400 hover:text-white transition-colors text-sm";
+const FOOTER_SOCIAL_LINK_CLASS =
+  "text-gray-400 hover:text-white transition-colors";
+const FOOTER_SECTION_TITLE_CLASS = "text-lg font-semibold mb-4";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -14,15 +21,15 @@ export default function Footer() {
             <h2 className="text-2xl font-bold mb-4">
               {STATIC_CONTENT.footer.title}
             </h2>
-            <p className="text-gray-400 mb-4">
+            <p className={`${FOOTER_MUTED_TEXT_CLASS} mb-4`}>
               {STATIC_CONTENT.footer.description}
             </p>
           </div>
 
           {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3 text-gray-400">
+            <h3 className={FOOTER_SECTION_TITLE_CLASS}>Contact</h3>
+            <div className={`space-y-3 ${FOOTER_MUTED_TEXT_CLASS}`}>
               <div>
                 <p className="text-sm leading-relaxed">
                   {STATIC_CONTENT.contact.address.street}
@@ -37,7 +44,7 @@ export default function Footer() {
               <div>
                 <a
                   href={`tel:${STATIC_CONTENT.contact.phone}`}
-                  className="hover:text-white transition-colors text-sm"
+                  className={FOOTER_MUTED_LINK_CLASS}
                 >
                   {STATIC_CONTENT.contact.phone}
                 </a>
@@ -45,7 +52,7 @@ export default function Footer() {
               <div>
                 <a
                   href={`mailto:${STATIC_CONTENT.contact.email}`}
-                  className="hover:text-white transition-colors text-sm"
+                  className={FOOTER_MUTED_LINK_CLASS}
                 >
                   {STATIC_CONTENT.contact.email}
                 </a>
@@ -55,11 +62,11 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+            <h3 className={FOOTER_SECTION_TITLE_CLASS}>Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4 mb-4">
               <a
                 href="https://www.instagram.com/broadway.bbq"
-                className="text-gray-400 hover:text-white transition-colors"
+                className={FOOTER_SOCIAL_LINK_CLASS}
                 aria-label="Instagram"
               >
                 <svg
@@ -76,7 +83,7 @@ export default function Footer() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className={FOOTER_MUTED_LINK_CLASS}
                 >
                   {link.name}
                 </a>
@@ -86,7 +93,9 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+        <div
+          className={`mt-8 pt-8 border-t border-gray-700 text-center ${FOOTER_MUTED_TEXT_CLASS}`}
+        >
           <p className="text-sm">
             © {currentYear} {STATIC_CONTENT.footer.title}. All rights reserved.
           </p>
