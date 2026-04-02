@@ -12,7 +12,7 @@
 
 ## Deploy Settings for Cloudflare Pages
 
-- **Build command**: `npm run build`
+- **Build command**: `pnpm run build`
 - **Build output directory**: `out`
 - **Node.js version**: 18.x
 
@@ -26,7 +26,7 @@
 
 ## Manual Deploy Steps
 
-1. Run `npm run build` locally
+1. Run `pnpm run build` locally
 2. Upload `out/` directory contents to Cloudflare Pages
 3. Ensure `_headers`, `_redirects`, and `_functions/` are in root
 

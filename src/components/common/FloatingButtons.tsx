@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { CalendarDays, Phone } from "lucide-react";
 
 interface FloatingButtonsProps {
   phone: string;
@@ -19,6 +19,13 @@ export default function FloatingButtons({
 
   return (
     <div className="floating-buttons">
+      <a
+        href="/booking"
+        className="floating-button floating-button-booking"
+        aria-label="Book a table"
+      >
+        <CalendarDays className="w-6 h-6" />
+      </a>
       <a
         href={`tel:${phone}`}
         className="floating-button floating-button-phone"

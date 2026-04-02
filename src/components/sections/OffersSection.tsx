@@ -175,11 +175,7 @@ export default function OffersSection() {
                       <Button
                         className={`bg-gradient-to-r ${offer.color} hover:opacity-90 text-white flex-1 py-3 text-base font-semibold`}
                         onClick={() => {
-                          const message = `Hi! I would like to book for ${offer.title} (${offer.day}) for ${offer.price}. Is it available?`;
-                          const whatsappUrl = `https://wa.me/447123456789?text=${encodeURIComponent(
-                            message
-                          )}`;
-                          window.open(whatsappUrl, "_blank");
+                          window.location.href = "/booking";
                         }}
                       >
                         Book Now

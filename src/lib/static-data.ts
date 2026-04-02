@@ -38,9 +38,9 @@ export const STATIC_CONTENT = {
       }
     ],
     callButton: {
-      text: "Call Us",
+      text: "Book a Table",
       phone: "+44 20 4537 3824",
-      href: "tel:+442045373824"
+      href: "/booking"
     }
   },
   footer: {
@@ -62,8 +62,8 @@ export const STATIC_CONTENT = {
     title: "Authentic Anatolian Flavours",
     subtitle: "Enjoy authentic Anatolian cuisine in a cosy atmosphere.",
     description: "Available for dine-in or takeaway.",
-    ctaText: "View Our Menu",
-    ctaLink: "/menu",
+    ctaText: "Book a Table",
+    ctaLink: "/booking",
     backgroundImage: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/background-1.avif"
   },
   about: {
@@ -566,7 +566,7 @@ export const STATIC_MENU = {
           price: 14.90,
           tags: ["vegetarian", "premium"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_halloumi_falafel.jpg"
+          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_halloumi_and_falafel.jpg"
         }
 
       ]

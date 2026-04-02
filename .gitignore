@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.pnpm-store
 /.pnp
 .pnp.*
 .yarn/*
@@ -30,11 +31,18 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# lockfiles (pnpm-only repo)
+package-lock.json
+yarn.lock
+
 # env files (can opt-in for committing if needed)
 .env*
 
 # vercel
 .vercel
+
+# editor
+.vscode/
 
 # typescript
 *.tsbuildinfo

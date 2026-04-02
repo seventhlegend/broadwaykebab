@@ -1,132 +1,281 @@
-# Broadway Kebab - Static Website
+# Broadway Kebab
 
-Bu proje, Broadway Kebab restoranı için statik Next.js uygulamasıdır. Otomatik optimizasyonlar ve performans iyileştirmeleri içerir.
+Broadway Kebab icin gelistirilmis, statik export odakli bir Next.js 15 uygulamasi.
+Proje, restoran tanitim sayfasi + menu + online rezervasyon akislarini hızlı ve platformlar arasi tasinabilir sekilde sunar.
 
-## 🚀 Özellikler
+## 1. Proje Ozeti
 
-- ✅ **Statik Export**: Tamamen statik HTML/CSS/JS çıktısı
-- ✅ **Performans Optimizasyonu**: Lazy loading, image optimization, bfcache
-- ✅ **Responsive Design**: Tüm cihazlarda uyumlu
-- ✅ **SEO Optimized**: Meta tags ve sitemap
-- ✅ **Modern Stack**: Next.js 15, React 19, Tailwind CSS
+Bu uygulama:
 
-## 🛠️ Geliştirme
+- Next.js App Router kullanir.
+- Build sonunda tamamen statik cikti uretir.
+- Ana veri kaynagini kod icerisindeki sabit verilerden alir.
+- TheFork rezervasyon widget entegrasyonu icerir.
+- pnpm tabanli gelistirme ve deploy akisina sahiptir.
 
-```bash
-# Bağımlılıkları yükle
-npm install
+Canli sayfalar:
 
-# Geliştirme sunucusunu başlat
-npm run dev
+- / (Ana sayfa)
+- /menu (Menu sayfasi)
+- /booking (Rezervasyon sayfasi)
 
-# Lint kontrolü
-npm run lint
-```
+## 2. Teknoloji Yigini
 
-## 📦 Build ve Deploy
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- ESLint 9
+- pnpm
 
-### Statik Build
+## 3. Mimari ve Veri Akisi
 
-```bash
-# Statik build oluştur
-npm run build
+### 3.1 Statik Export Yaklasimi
 
-# Build çıktısı `out/` klasöründe olacak
-```
+Proje static export modunda calisir.
+Build sirasinda sayfalar prerender edilir ve out klasorune yazilir.
 
-### Deploy Seçenekleri
+Onemli noktalar:
 
-#### 1. Vercel Deploy
+- next.config.ts icinde output: export tanimlidir.
+- Dist klasoru out olarak ayarlanmistir.
+- Image optimizasyonu static export ile uyumlu olacak sekilde unoptimized: true kullanir.
 
-```bash
-npm run deploy:vercel
-# Vercel CLI ile: vercel --prod
-```
+### 3.2 Veri Kaynagi
 
-#### 2. Netlify Deploy
+Uygulama runtime asamasinda public/data altindaki JSON dosyalarini okumaz.
+Icerik ve menu verisi src/lib/static-data.ts icindeki sabitlerden gelir.
 
-```bash
-npm run deploy:netlify
-# out/ klasörünü Netlify'a yükle
-```
+Bu sayede:
 
-#### 3. GitHub Pages Deploy
+- Deploy sonrasi dosya okuma bagimliligi azalir.
+- Static hosting ortamlariyla uyum artar.
 
-```bash
-npm run deploy:github
-# GitHub Actions otomatik deploy yapacak
-```
+### 3.3 Rezervasyon Akisi
 
-#### 4. Manual Deploy
+/booking sayfasi TheFork iframe widget gosterir.
+Iframe yuklenmezse kullanici 5 saniye icinde TheFork baglantisina otomatik yonlendirilir.
 
-```bash
-# Build sonrası out/ klasörünü herhangi bir statik hosting'e yükle
-npm run build
-```
+## 4. Proje Dizin Yapisi
 
-## 🌐 Local Test
+Temel klasorler:
 
-```bash
-# Statik dosyaları local'de test et
-npm run serve
-# veya
-npx serve out
-```
+- src/app: App Router sayfalari
+- src/components: UI ve sayfa bolumleri
+- src/lib: Sabit veri ve yardimci dosyalar
+- public: Statik dosyalar, deploy yardimci dosyalari
+- out: Build sonrasi statik cikti
 
-## 📁 Dosya Yapısı
+## 5. Gereksinimler
 
-```
-out/                    # Statik build çıktısı
-├── index.html         # Ana sayfa
-├── menu/index.html    # Menü sayfası
-├── _next/static/      # Optimized assets
-├── images/            # Resimler
-├── .htaccess          # Apache yapılandırması
-├── _redirects         # Netlify yapılandırması
-└── .nojekyll          # GitHub Pages için
-```
+- Node.js 18 veya ustu
+- pnpm
 
-## ⚙️ Yapılandırma Dosyaları
+Opsiyonel:
 
-- **next.config.ts**: Next.js statik export yapılandırması
-- **vercel.json**: Vercel deploy yapılandırması
-- **public/.htaccess**: Apache sunucu yapılandırması
-- **public/\_redirects**: Netlify yapılandırması
-- **.github/workflows/deploy.yml**: GitHub Actions CI/CD
+- Vercel CLI
+- Wrangler
 
-## 🚀 Deploy URL'leri
-
-Bu projeyi aşağıdaki platformlarda deploy edebilirsiniz:
-
-- **Vercel**: [vercel.com](https://vercel.com)
-- **Netlify**: [netlify.com](https://netlify.com)
-- **GitHub Pages**: Repository Settings > Pages
-- **AWS S3**: Static website hosting
-- **Firebase Hosting**: `firebase deploy`
-
-## 📋 Build Gereksinimleri
-
-- Node.js 18+
-- npm veya yarn
-- 100MB+ disk alanı
-
-## 🔧 Troubleshooting
-
-### Build Hataları
+## 6. Kurulum
 
 ```bash
-# Cache temizle
+pnpm install
+```
+
+## 7. Gelistirme Ortami
+
+### 7.1 Development Server
+
+```bash
+pnpm run dev
+```
+
+Varsayilan olarak http://localhost:3000 uzerinden calisir.
+
+### 7.2 Lint Kontrolu
+
+```bash
+pnpm run lint
+```
+
+## 8. Build ve Lokal Calistirma
+
+### 8.1 Uretim Build
+
+```bash
+pnpm run build
+```
+
+Bu komut:
+
+1. Next.js static build olusturur.
+2. public altindaki deploy yardimci dosyalarini out klasorune kopyalar:
+   - \_headers
+   - \_redirects
+   - vercel.json
+   - \_functions/[[path]].js
+
+### 8.2 Build Ciktisini Lokal Sunma
+
+```bash
+pnpm run serve
+```
+
+veya
+
+```bash
+pnpm run start
+```
+
+Not: start scripti out klasorunu 3000 portunda serve eder.
+
+## 9. Test Rehberi
+
+Bu projede formal test framework scripti yoktur.
+Pratik test sureci lint + build + manuel smoke test seklindedir.
+
+### 9.1 Hızlı Dogrulama
+
+```bash
+pnpm run lint && pnpm run build
+```
+
+### 9.2 Lokal Smoke Test
+
+1. Build al:
+
+```bash
+pnpm run build
+```
+
+2. Static ciktıyı calistir:
+
+```bash
+pnpm run start
+```
+
+3. Asagidaki sayfalari tarayicida kontrol et:
+
+- /
+- /menu
+- /booking
+
+4. Rezervasyon fallback senaryosu:
+
+- /booking sayfasinda widget acilmadigi durumda yonlendirme calisiyor mu kontrol et.
+
+### 9.3 Tip Kontrolu (Opsiyonel)
+
+Projede ayri bir typecheck scripti olmasa da su komutla kontrol yapilabilir:
+
+```bash
+pnpm exec tsc --noEmit
+```
+
+## 10. Deploy Rehberi
+
+### 10.1 Vercel
+
+```bash
+pnpm run deploy:vercel
+```
+
+Not: Komut build alir ve manuel upload hatirlatmasi basar.
+
+### 10.2 Netlify
+
+```bash
+pnpm run deploy:netlify
+```
+
+Build sonrasi out klasorunu publish et.
+
+### 10.3 GitHub Pages
+
+```bash
+pnpm run deploy:github
+```
+
+Bu komut out/.nojekyll dosyasini olusturur.
+CI tarafinda .github/workflows/deploy.yml pnpm ile build alir.
+
+### 10.4 Cloudflare Pages
+
+```bash
+pnpm run deploy:cloudflare
+```
+
+Cloudflare ayarlari:
+
+- Build command: pnpm run build
+- Build output directory: out
+- Node.js: 18.x+
+
+## 11. Konfigurasyon Dosyalari
+
+- next.config.ts: static export ve performans ayarlari
+- middleware.ts: guvenlik basliklari ve cache davranisi
+- vercel.json: Vercel ayarlari
+- wrangler.toml: Cloudflare Wrangler ayarlari
+- public/\_headers: static host icin header tanimlari
+- public/\_redirects: static host icin yonlendirme tanimlari
+
+## 12. Guvenlik Notlari
+
+Middleware katmaninda temel guvenlik basliklari eklenir:
+
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- Referrer-Policy: strict-origin-when-cross-origin
+
+Not: /booking sayfasindaki TheFork entegrasyonu iframe yuklenemezse otomatik dis baglanti yonlendirmesi yaptigi icin kullanici akisinda kopma olmaz.
+
+## 13. Icerik Guncelleme Rehberi
+
+Menu, iletisim, hero, navbar ve testimonial iceriklerini guncellemek icin ana kaynak:
+
+- src/lib/static-data.ts
+
+Icerik degisikligi sonrasi onerilen adimlar:
+
+1. pnpm run lint
+2. pnpm run build
+3. / ve /menu sayfalarini manuel kontrol et
+
+## 14. Sık Karsilasilan Sorunlar
+
+### 14.1 Temiz Kurulum
+
+```bash
 rm -rf .next out node_modules
-npm install
-npm run build
+pnpm install
+pnpm run build
 ```
 
-### Image Optimization Hataları
+### 14.2 Port Cakismasi
 
-- Resimler `public/images/` klasöründe olmalı
-- `unoptimized: true` ayarı aktif
-- Desteklenen formatlar: WEBP, AVIF, PNG, JPEG
+3000 portu doluysa dev komutunu farkli portla calistir:
 
-## 📞 İletişim
+```bash
+pnpm exec next dev -p 3001
+```
 
-Herhangi bir sorun için issue açabilirsiniz.
+### 14.3 Build Sonrasi Dosya Eksigi
+
+Build komutu, deploy dosyalarini out klasorune kopyalar.
+CI veya lokal ortamda copy adimlarinin atlanmadigindan emin ol.
+
+## 15. Komut Ozeti
+
+```bash
+pnpm install
+pnpm run dev
+pnpm run lint
+pnpm run build
+pnpm run serve
+pnpm run start
+pnpm run deploy:github
+pnpm run deploy:netlify
+pnpm run deploy:vercel
+pnpm run deploy:cloudflare
+```

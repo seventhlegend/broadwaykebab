@@ -151,16 +151,15 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                     Reserve Your Table
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Call us or send a WhatsApp message to reserve your table for
-                    an authentic Anatolian dining experience.
+                    Book your table online in seconds, or call us directly if
+                    you prefer.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <a href={`tel:${contact.phone}`} className="flex-1">
+                    <Link href="/booking" className="flex-1">
                       <Button className="bg-amber-700 hover:bg-amber-800 w-full">
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call to Reserve
+                        Book a Table
                       </Button>
-                    </a>
+                    </Link>
                     <Link href="/menu" className="flex-1">
                       <Button
                         variant="outline"
@@ -169,6 +168,15 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                         View Menu
                       </Button>
                     </Link>
+                    <a href={`tel:${contact.phone}`} className="flex-1">
+                      <Button
+                        variant="outline"
+                        className="border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white w-full"
+                      >
+                        <Phone className="w-4 h-4 mr-2" />
+                        Call
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>

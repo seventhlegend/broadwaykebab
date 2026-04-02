@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, CalendarDays } from "lucide-react";
 import { STATIC_CONTENT } from "@/lib/static-data";
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
               href={STATIC_CONTENT.navbar.callButton.href}
               className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-amber-700 text-white hover:bg-amber-800 h-10 px-4 py-2"
             >
-              <Phone className="w-4 h-4 mr-2" />
+              <CalendarDays className="w-4 h-4 mr-2" />
               {STATIC_CONTENT.navbar.callButton.text}
             </a>
           </div>
@@ -119,7 +119,7 @@ export default function Navbar() {
                 onClick={closeMobileMenu}
                 className="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-amber-700 text-white hover:bg-amber-800 h-10 px-4 py-2"
               >
-                <Phone className="w-4 h-4 mr-2" />
+                <CalendarDays className="w-4 h-4 mr-2" />
                 {STATIC_CONTENT.navbar.callButton.text}
               </a>
               <p className="text-sm text-gray-500 text-center mt-2">

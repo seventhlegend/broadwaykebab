@@ -98,6 +98,16 @@ body {
   transform: scale(1.05) !important;
 }
 
+.floating-button-booking {
+  background-color: #1f2937 !important;
+  color: white !important;
+}
+
+.floating-button-booking:hover {
+  background-color: #111827 !important;
+  transform: scale(1.05) !important;
+}
+
 .floating-button-whatsapp {
   background-color: #16a34a !important;
   color: white !important;

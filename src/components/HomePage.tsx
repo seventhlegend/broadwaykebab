@@ -14,7 +14,7 @@ import {
 export default function HomePage() {
   // Extract featured items from static menu data
   const featuredItems = (STATIC_MENU.categories as unknown as any[]).flatMap(
-    (category: any) => category.items.filter((item: any) => item.featured)
+    (category: any) => category.items.filter((item: any) => item.featured),
   );
 
   return (
@@ -38,26 +38,11 @@ export default function HomePage() {
       <ContactSection contact={STATIC_CONTENT.contact} />
 
       {/* Sticky Call & WhatsApp buttons */}
-      <div className="floating-buttons">
-        <a
-          href={`tel:${STATIC_CONTENT.contact.phone}`}
-          className="floating-button floating-button-phone"
-          aria-label="Call us"
-        >
-          📞
-        </a>
-        <a
-          href={`https://wa.me/${
-            STATIC_CONTENT.contact.whatsapp
-          }?text=${encodeURIComponent(STATIC_CONTENT.contact.whatsappMessage)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="floating-button floating-button-whatsapp"
-          aria-label="Contact us on WhatsApp"
-        >
-          💬
-        </a>
-      </div>
+      <FloatingButtons
+        phone={STATIC_CONTENT.contact.phone}
+        whatsapp={STATIC_CONTENT.contact.whatsapp}
+        whatsappMessage={STATIC_CONTENT.contact.whatsappMessage}
+      />
     </div>
   );
 }
