@@ -129,6 +129,19 @@ pnpm run start
 
 Not: start scripti out klasorunu 3000 portunda serve eder.
 
+### 8.3 Zip Release Paketi Olusturma
+
+Asagidaki komut release tipi bir zip olusturur:
+
+- Once build alir
+- out/images/menu klasorunu siler
+- out klasorunun kendisini degil, sadece icerigini zipler
+- Tarih-saat iceren dosya adi uretir (ornek: broadwaykebab-static-build-20260402-1927.zip)
+
+```bash
+pnpm run release:zip
+```
+
 ## 9. Test Rehberi
 
 Bu projede formal test framework scripti yoktur.
@@ -272,6 +285,7 @@ pnpm install
 pnpm run dev
 pnpm run lint
 pnpm run build
+pnpm run release:zip
 pnpm run serve
 pnpm run start
 pnpm run deploy:github
