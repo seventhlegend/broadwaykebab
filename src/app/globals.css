@@ -1,15 +1,59 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+  --paper: #f7f4ec;
+  --surface: #fffdf8;
+  --paper-muted: #ebe5d9;
+  --ink: #211d19;
+  --muted: #675f56;
+  --grill: #a92e25;
+  --grill-deep: #76231d;
+  --spice: #c78b3d;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-paper-muted: var(--paper-muted);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-grill: var(--grill);
+  --color-grill-deep: var(--grill-deep);
+  --color-spice: var(--spice);
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
   margin: 0;
-  background: #fff;
-  color: #1f2937;
+  background: var(--paper);
+  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: rgb(169 46 37 / 18%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  text-wrap: balance;
+}
+
+a,
+button,
+summary {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--grill);
+  outline-offset: 3px;
 }
 
 summary {
@@ -21,8 +65,22 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+section[id],
+main[id] {
+  scroll-margin-top: 6rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

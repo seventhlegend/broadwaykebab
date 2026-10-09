@@ -1,103 +1,68 @@
+import { Instagram } from "lucide-react";
 import { STATIC_CONTENT } from "@/lib/static-data";
-
-const FOOTER_MUTED_TEXT_CLASS = "text-gray-400";
-const FOOTER_MUTED_LINK_CLASS =
-  "text-gray-400 hover:text-white transition-colors text-sm";
-const FOOTER_SOCIAL_LINK_CLASS =
-  "text-gray-400 hover:text-white transition-colors";
-const FOOTER_SECTION_TITLE_CLASS = "text-lg font-semibold mb-4";
+import BrandLogo from "@/components/common/BrandLogo";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const { footer, contact } = STATIC_CONTENT;
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Restaurant Info */}
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold mb-4">
-              {STATIC_CONTENT.footer.title}
-            </h2>
-            <p className={`${FOOTER_MUTED_TEXT_CLASS} mb-4`}>
-              {STATIC_CONTENT.footer.description}
-            </p>
-          </div>
-
-          {/* Contact Info */}
-          <div className="text-center md:text-left">
-            <h3 className={FOOTER_SECTION_TITLE_CLASS}>Contact</h3>
-            <div className={`space-y-3 ${FOOTER_MUTED_TEXT_CLASS}`}>
-              <div>
-                <p className="text-sm leading-relaxed">
-                  {STATIC_CONTENT.contact.address.street}
-                  <br />
-                  {STATIC_CONTENT.contact.address.city},{" "}
-                  {STATIC_CONTENT.contact.address.state}{" "}
-                  {STATIC_CONTENT.contact.address.zip}
-                  <br />
-                  {STATIC_CONTENT.contact.address.country}
-                </p>
-              </div>
-              <div>
-                <a
-                  href={`tel:${STATIC_CONTENT.contact.phone}`}
-                  className={FOOTER_MUTED_LINK_CLASS}
-                >
-                  {STATIC_CONTENT.contact.phone}
-                </a>
-              </div>
-              <div>
-                <a
-                  href={`mailto:${STATIC_CONTENT.contact.email}`}
-                  className={FOOTER_MUTED_LINK_CLASS}
-                >
-                  {STATIC_CONTENT.contact.email}
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="text-center md:text-left">
-            <h3 className={FOOTER_SECTION_TITLE_CLASS}>Follow Us</h3>
-            <div className="flex justify-center md:justify-start space-x-4 mb-4">
-              <a
-                href="https://www.instagram.com/broadway.bbq"
-                className={FOOTER_SOCIAL_LINK_CLASS}
-                aria-label="Instagram"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-            </div>
-            <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-2 sm:space-y-0 sm:space-x-6">
-              {STATIC_CONTENT.footer.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={FOOTER_MUTED_LINK_CLASS}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div
-          className={`mt-8 pt-8 border-t border-gray-700 text-center ${FOOTER_MUTED_TEXT_CLASS}`}
-        >
-          <p className="text-sm">
-            © {currentYear} {STATIC_CONTENT.footer.title}. All rights reserved.
+    <footer className="bg-grill-deep text-white">
+      <div className="mx-auto grid max-w-[1240px] gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.2fr_1fr_0.8fr] md:py-16">
+        <div>
+          <a href="/" aria-label="Broadway Kebab home" className="inline-flex">
+            <BrandLogo className="h-12 w-[216px]" inverted />
+          </a>
+          <p className="mt-4 max-w-sm leading-7 text-white/75">
+            {footer.description}
           </p>
         </div>
+
+        <div>
+          <h2 className="mb-4 font-display text-xl font-bold">Find Us</h2>
+          <address className="not-italic leading-7 text-white/75">
+            {contact.address.street}
+            <br />
+            {contact.address.city}, {contact.address.state} {contact.address.zip}
+            <br />
+            {contact.address.country}
+          </address>
+          <a
+            href={contact.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex min-h-11 items-center font-semibold text-white underline decoration-white/50 underline-offset-4 hover:decoration-white"
+          >
+            Get directions
+          </a>
+        </div>
+
+        <div>
+          <h2 className="mb-4 font-display text-xl font-bold">Say Hello</h2>
+          <div className="flex flex-col items-start gap-2 text-white/75">
+            <a
+              href={`tel:${contact.phone}`}
+              className="inline-flex min-h-11 items-center hover:text-white"
+            >
+              {contact.phone}
+            </a>
+            <a
+              href={`mailto:${contact.email}`}
+              className="inline-flex min-h-11 items-center hover:text-white"
+            >
+              {contact.email}
+            </a>
+            <a
+              href="https://www.instagram.com/broadway.bbq"
+              aria-label="Broadway Kebab on Instagram"
+              className="mt-2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-white/35 hover:bg-white/10"
+            >
+              <Instagram aria-hidden="true" className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-white/15 px-5 py-5 text-center text-sm text-white/70">
+        © {new Date().getFullYear()} {footer.title}. All rights reserved.
       </div>
     </footer>
   );

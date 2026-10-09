@@ -18,7 +18,6 @@ export const STATIC_CONTENT = {
   },
   navbar: {
     brand: "Broadway",
-    logo: "/logo.avif",
     links: [
       {
         name: "Home",
@@ -119,7 +118,7 @@ export const STATIC_TESTIMONIALS = [
     id: 1,
     name: "Dawan Dlshad",
     rating: 5,
-    text: "Absolutely fantastic! The food at Broadway BBQ in Tooting was amazing — full of flavour and cooked to perfection. I had the mixed kebab, and it was simply outstanding. Tender, juicy, and packed with taste. The service was friendly and efficient, adding to an already great experience. Highly recommend if you're in the area and craving some delicious BBQ! 💯",
+    text: "Absolutely fantastic! The food at Broadway BBQ in Tooting was amazing, full of flavour and cooked to perfection. I had the mixed kebab, and it was simply outstanding. Tender, juicy, and packed with taste. The service was friendly and efficient, adding to an already great experience. Highly recommend if you're in the area and craving some delicious BBQ! 💯",
     location: "Local Guide • 13 reviews • 36 photos",
     date: "a week ago",
     verified: true,
