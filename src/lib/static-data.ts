@@ -4,7 +4,7 @@ export const STATIC_CONTENT = {
     title: "Broadway Kebab Restaurant - Authentic Anatolian Cuisine",
     description: "Experience authentic Anatolian flavours at Broadway Restaurant. Fresh mezze, grilled kebabs, and traditional desserts in a warm, welcoming atmosphere.",
     keywords: "Anatolian restaurant, authentic Anatolian food, kebabs, mezze, baklava, halal food",
-    ogImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200"
+    ogImage: "/images/restaurant-hero.webp"
   },
   menu: {
     meta: {
@@ -64,7 +64,7 @@ export const STATIC_CONTENT = {
     description: "Available for dine-in or takeaway.",
     ctaText: "Book a Table",
     ctaLink: "/booking/",
-    backgroundImage: "/images/background-1.avif"
+    backgroundImage: "/images/restaurant-hero.webp"
   },
   about: {
     title: "A Taste of Anatolia",
