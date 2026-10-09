@@ -50,21 +50,21 @@ const offers: Offer[] = [
   // },
   {
     id: 1,
-    title: "Wednesday Special – Cold Starter + Main Course for Just £15!",
+    title: "Wednesday Special – Starter + Main for Just £20!",
     description:
       "Join us every Wednesday at Broadway Kebab, located inside Broadway Market in Tooting, London, and enjoy a delicious deal:",
     details: [
-      "One cold starter + one main course for only £15",
+      "One cold starter + one main course for only £20",
       "Charcoal-grilled chicken and lamb kebabs",
       "Flavourful seafood options available",
       "Served with bulgur rice or chips, salad and fresh flatbread",
       "Perfect for a midweek treat with authentic Anatolian taste",
     ],
     image:
-      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/wednesday-offer.jpg",
+      "/images/wednesday-offer.webp",
     icon: <Calendar className="w-6 h-6" />,
     day: "Every Wednesday",
-    price: "£15",
+    price: "£20",
     colorKey: "emerald",
   },
   {
