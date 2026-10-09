@@ -1,33 +1,30 @@
-# Broadway Kebab - Static Site
+# Broadway Kebab — Cloudflare Pages
 
-**Static Export Optimized for Cloudflare Pages**
+This project is exported as a static Next.js site. The build writes HTML, JavaScript, CSS, and images to `out/`; it does not need a Next.js server or Pages Functions.
 
-## Files Structure for Deploy
+## Cloudflare Pages settings
 
-- `out/` - Main build output directory
-- `out/_headers` - MIME type and cache configurations
-- `out/_redirects` - URL routing and static asset fallbacks
-- `out/_functions/` - Cloudflare Pages Functions for asset handling
-- `out/_next/static/` - Next.js static assets (CSS, JS chunks)
+- Build command: `pnpm run build`
+- Build output directory: `out`
+- Node.js: `22` (also recorded in `.node-version`)
 
-## Deploy Settings for Cloudflare Pages
+The `wrangler.toml` file identifies `out/` as the Pages output directory. The build copies `_headers`, `_redirects`, and the Vercel header config into `out/`. Cloudflare reads `_headers` and `_redirects` from the static output root.
 
-- **Build command**: `pnpm run build`
-- **Build output directory**: `out`
-- **Node.js version**: 18.x
+## Routes and images
 
-## Key Optimizations
+The static export creates `out/index.html`, `out/menu/index.html`, and `out/booking/index.html`. Internal links use trailing slashes, matching `trailingSlash: true`. The redirects file only canonicalizes `/menu` and `/booking`; it does not redirect all unknown paths to the home page.
 
-1. All content is statically embedded at build time
-2. MIME types properly configured for CSS/JS files
-3. Static asset routing prioritized over SPA fallbacks
-4. Cloudflare Pages Functions handle edge cases
-5. Proper cache headers for performance
+All menu and offer images are stored under `public/images` and included in the export and release ZIP. The site does not rely on a runtime function for routing or asset MIME types.
 
-## Manual Deploy Steps
+## Build and preview
 
-1. Run `pnpm run build` locally
-2. Upload `out/` directory contents to Cloudflare Pages
-3. Ensure `_headers`, `_redirects`, and `_functions/` are in root
+```bash
+pnpm run build
+pnpm run serve
+```
 
-The site should now load without any 404 or MIME type errors on Cloudflare Pages.
+To create a deployable ZIP containing the contents of `out/`:
+
+```bash
+pnpm run release:zip
+```

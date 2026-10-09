@@ -162,12 +162,12 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                     you prefer.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/booking" className="flex-1">
+                    <Link href="/booking/" className="flex-1">
                       <Button className={CONTACT_PRIMARY_BUTTON_CLASS}>
                         Book a Table
                       </Button>
                     </Link>
-                    <Link href="/menu" className="flex-1">
+                    <Link href="/menu/" className="flex-1">
                       <Button
                         variant="outline"
                         className={CONTACT_ACTION_BUTTON_CLASS}

@@ -1,19 +1,21 @@
 {
   "name": "broadwaykebab",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.15.1",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack && cp public/_headers out/ && cp public/_redirects out/ && cp vercel.json out/ && mkdir -p out/_functions && cp \"public/_functions/[[path]].js\" out/_functions/",
-    "release:zip": "pnpm run build && rm -rf out/images/menu && ZIP_NAME=\"broadwaykebab-static-build-$(date +%Y%m%d-%H%M).zip\" && rm -f \"$ZIP_NAME\" && (cd out && zip -r \"../$ZIP_NAME\" .) && echo \"Created $ZIP_NAME\"",
+    "build": "pnpm run build:static",
+    "build:static": "next build --webpack && cp public/_headers out/ && cp public/_redirects out/ && rm -rf out/_functions",
+    "release:zip": "pnpm run build:static && ZIP_NAME=\"broadwaykebab-static-build-$(date +%Y%m%d-%H%M).zip\" && rm -f \"$ZIP_NAME\" && (cd out && zip -r \"../$ZIP_NAME\" . -x '*.DS_Store') && echo \"Created $ZIP_NAME\"",
     "start": "pnpm dlx serve out -l 3000",
-    "lint": "next lint",
-    "export": "next build",
-    "serve": "pnpm dlx serve out",
-    "deploy:github": "pnpm run build && touch out/.nojekyll",
-    "deploy:netlify": "pnpm run build",
-    "deploy:vercel": "pnpm run build && echo 'Upload out/ directory to Vercel'",
-    "deploy:cloudflare": "pnpm run build && echo 'Upload out/ directory to Cloudflare Pages'"
+    "lint": "eslint .",
+    "export": "pnpm run build:static",
+    "serve": "pnpm dlx serve out -l 3000",
+    "deploy:github": "GITHUB_PAGES=true pnpm run build:static && touch out/.nojekyll",
+    "deploy:netlify": "pnpm run build:static",
+    "deploy:vercel": "pnpm run build:static && echo 'Upload out/ directory to Vercel'",
+    "deploy:cloudflare": "pnpm run build:static && echo 'Upload out/ directory to Cloudflare Pages'"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",

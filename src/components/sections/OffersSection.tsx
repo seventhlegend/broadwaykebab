@@ -1,8 +1,9 @@
 "use client";
 
-import { Clock, Calendar, Utensils, Wine } from "lucide-react";
+import { Clock, Calendar, Wine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { assetPath } from "@/lib/asset-path";
 
 interface Offer {
   id: number;
@@ -30,24 +31,6 @@ const OFFER_COLOR_THEMES = {
 } as const;
 
 const offers: Offer[] = [
-  // {
-  //   id: 1,
-  //   title: "50% OFF Main Dishes – Every Tuesday!",
-  //   description:
-  //     "Looking for a midweek treat? Come to Broadway Kebab, inside Broadway Market in Tooting, London, and enjoy 50% off all main dishes every Tuesday!",
-  //   details: [
-  //     "Charcoal-grilled chicken, tender lamb, and fresh seafood dishes",
-  //     "Served with your choice of bulgur rice or chips",
-  //     "Fresh salad and flatbread included",
-  //     "Authentic Anatolian flavour",
-  //   ],
-  //   image:
-  //     "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/UK220737_broadway%20bbq_Hero2.jpg",
-  //   icon: <Utensils className="w-6 h-6" />,
-  //   day: "Every Tuesday",
-  //   price: "50% OFF",
-  //   color: "from-red-500 to-pink-600",
-  // },
   {
     id: 1,
     title: "Wednesday Special – Starter + Main for Just £20!",
@@ -80,7 +63,7 @@ const offers: Offer[] = [
       "Full Anatolian experience",
     ],
     image:
-      "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/sunday-brunch.jpg",
+      "/images/sunday-brunch.jpg",
     icon: <Wine className="w-6 h-6" />,
     day: "Every Sunday",
     price: "£30",
@@ -118,7 +101,7 @@ export default function OffersSection() {
                   <div className="lg:w-1/2 w-full">
                     <div className="relative h-[400px] sm:h-[450px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
                       <img
-                        src={offer.image}
+                        src={assetPath(offer.image)}
                         alt={offer.title}
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -190,7 +173,7 @@ export default function OffersSection() {
                           <Button
                             className={`bg-gradient-to-r ${theme.gradientClass} hover:opacity-90 text-white flex-1 py-3 text-base font-semibold`}
                             onClick={() => {
-                              window.location.href = "/booking";
+                              window.location.href = "/booking/";
                             }}
                           >
                             Book Now
@@ -199,7 +182,7 @@ export default function OffersSection() {
                             variant="outline"
                             className="flex-1 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white py-3 text-base font-semibold"
                             onClick={() => {
-                              window.location.href = "/menu";
+                              window.location.href = "/menu/";
                             }}
                           >
                             View Menu

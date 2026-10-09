@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { assetPath } from "@/lib/asset-path";
 
 interface HeroSectionProps {
   hero: {
@@ -17,10 +18,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
     <section className="hero-section performance-optimized">
       {/* Background Image - Optimized for static export */}
       <img
-        src={
-          hero?.backgroundImage ||
-          "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/background-1.avif"
-        }
+        src={assetPath(hero?.backgroundImage || "/images/background-1.avif")}
         alt="Broadway Kebab Restaurant Background"
         className="hero-image absolute inset-0 w-full h-full object-cover"
         loading="eager"

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import {
   Star,
   Search,
@@ -340,7 +341,7 @@ export default function MenuClient() {
                           {item.image && (
                             <div className="md:w-48 md:h-36 w-full h-48 relative rounded-lg overflow-hidden flex-shrink-0">
                               <Image
-                                src={item.image}
+                                src={assetPath(item.image)}
                                 alt={item.name}
                                 fill
                                 className="object-cover"

@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import { assetPath } from "@/lib/asset-path";
 
 export default function RootLayout({
   children,
@@ -14,7 +15,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/background-1.avif"
+          href={assetPath("/images/background-1.avif")}
           type="image/avif"
           fetchPriority="high"
         />

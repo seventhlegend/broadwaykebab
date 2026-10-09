@@ -26,7 +26,7 @@ export const STATIC_CONTENT = {
       },
       {
         name: "Menu",
-        href: "/menu"
+        href: "/menu/"
       },
       {
         name: "About",
@@ -40,7 +40,7 @@ export const STATIC_CONTENT = {
     callButton: {
       text: "Book a Table",
       phone: "+44 20 4537 3824",
-      href: "/booking"
+      href: "/booking/"
     }
   },
   footer: {
@@ -63,8 +63,8 @@ export const STATIC_CONTENT = {
     subtitle: "Enjoy authentic Anatolian cuisine in a cosy atmosphere.",
     description: "Available for dine-in or takeaway.",
     ctaText: "Book a Table",
-    ctaLink: "/booking",
-    backgroundImage: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/background-1.avif"
+    ctaLink: "/booking/",
+    backgroundImage: "/images/background-1.avif"
   },
   about: {
     title: "A Taste of Anatolia",
@@ -227,7 +227,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_humus.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_humus.webp"
         },
         {
           id: "baba-ghanoush",
@@ -236,7 +236,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_youghurt.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_youghurt.webp"
         },
         {
           id: "cacik",
@@ -245,7 +245,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian", "gluten-free"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_cacik.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_cacik.webp"
         },
         {
           id: "yaprak-sarma",
@@ -254,7 +254,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_vine_leaves.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_vine_leaves.webp"
         },
         {
           id: "shakshuka",
@@ -263,7 +263,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_shakshuka.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_shakshuka.webp"
         },
         {
           id: "olives-and-bread",
@@ -272,7 +272,7 @@ export const STATIC_MENU = {
           price: 4.90,
           tags: ["vegetarian"],
           allergens: ["gluten"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_olive.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_olive.webp"
         },
         {
           id: "sharing-cold-starters",
@@ -281,7 +281,7 @@ export const STATIC_MENU = {
           price: 19.00,
           tags: ["vegetarian"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_sharing_cold_starter.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_sharing_cold_starter.webp"
         }
       ]
     },
@@ -297,7 +297,7 @@ export const STATIC_MENU = {
           price: 6.50,
           tags: ["halal"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_sujuk.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_sujuk.webp"
         },
         {
           id: "halloumi",
@@ -306,7 +306,7 @@ export const STATIC_MENU = {
           price: 6.50,
           tags: ["vegetarian"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_halloumi.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_halloumi.webp"
         },
         {
           id: "falafel",
@@ -333,7 +333,7 @@ export const STATIC_MENU = {
           price: 6.50,
           tags: ["vegetarian"],
           allergens: ["gluten", "dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_borek.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_borek.webp"
         },
         {
           id: "sharing-hot-starters",
@@ -342,7 +342,7 @@ export const STATIC_MENU = {
           price: 24.90,
           tags: ["sharing"],
           allergens: ["gluten", "dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_sharing_hot_starter.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_sharing_hot_starter.webp"
         }
       ]
     },
@@ -359,7 +359,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_lamb_doner.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_lamb_doner.webp"
         },
         {
           id: "lamb-skewers",
@@ -369,7 +369,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_lamb_shish_kebab.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_lamb_shish_kebab.webp"
         },
         {
           id: "adana-kebab",
@@ -378,7 +378,7 @@ export const STATIC_MENU = {
           price: 16.90,
           tags: ["halal", "spicy"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_adana_kofta_kebab.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_adana_kofta_kebab.webp"
         },
         {
           id: "lamb-chops",
@@ -396,7 +396,7 @@ export const STATIC_MENU = {
           price: 13.95,
           tags: ["halal", "signature"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_doner.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_chicken_doner.webp"
         },
         {
           id: "chicken-skewers",
@@ -405,7 +405,7 @@ export const STATIC_MENU = {
           price: 15.95,
           tags: ["halal", "popular"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_shish_kebab.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_chicken_shish_kebab.webp"
         },
         {
           id: "chicken-wings",
@@ -415,7 +415,7 @@ export const STATIC_MENU = {
           tags: ["halal", "popular"],
           allergens: [],
           featured: true,
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_chicken_wings.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_chicken_wings.webp"
         },
         {
           id: "beyti-kebab",
@@ -424,7 +424,7 @@ export const STATIC_MENU = {
           price: 18.90,
           tags: ["halal", "signature"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_lamb_beyti.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_lamb_beyti.webp"
         },
         {
           id: "mixed-doner",
@@ -433,7 +433,7 @@ export const STATIC_MENU = {
           price: 14.95,
           tags: ["halal", "signature"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_mix_doner.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_mix_doner.webp"
         },
         {
           id: "chicken-and-lamb-mix",
@@ -442,7 +442,7 @@ export const STATIC_MENU = {
           price: 17.90,
           tags: ["halal", "signature"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_mix_shish.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_mix_shish.webp"
         },
         {
           id: "mixed-kebab",
@@ -452,7 +452,7 @@ export const STATIC_MENU = {
           tags: ["halal", "signature"],
           allergens: [],
           featured: true,
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_mix_kebab.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_mix_kebab.webp"
         }
       ]
     },
@@ -478,7 +478,7 @@ export const STATIC_MENU = {
           price: 7.50,
           tags: ["seafood"],
           allergens: ["gluten", "dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_calamari.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_calamari.webp"
         },
         {
           id: "octopus-starter",
@@ -514,7 +514,7 @@ export const STATIC_MENU = {
           price: 17.90,
           tags: ["seafood"],
           allergens: ["fish"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_seabass.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_seabass.webp"
         },
         {
           id: "salmon",
@@ -523,7 +523,7 @@ export const STATIC_MENU = {
           price: 15.90,
           tags: ["seafood"],
           allergens: ["fish"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_salmon.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_salmon.webp"
         },
         {
           id: "calamari-main",
@@ -566,7 +566,7 @@ export const STATIC_MENU = {
           price: 14.90,
           tags: ["vegetarian", "premium"],
           allergens: ["dairy"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_halloumi_and_falafel.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_halloumi_and_falafel.webp"
         }
 
       ]
@@ -662,7 +662,7 @@ export const STATIC_MENU = {
           price: 7.50,
           tags: ["halal", "popular"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_side_wings.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_side_wings.webp"
         },
         {
           id: "chips",
@@ -696,7 +696,7 @@ export const STATIC_MENU = {
           price: 6.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_ezme_salad.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_ezme_salad.webp"
         },
         {
           id: "coban-salata",
@@ -705,7 +705,7 @@ export const STATIC_MENU = {
           price: 7.90,
           tags: ["vegan", "vegetarian"],
           allergens: [],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_coban_salad.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_coban_salad.webp"
         }
       ]
     },
@@ -721,7 +721,7 @@ export const STATIC_MENU = {
           price: 7.50,
           tags: ["vegetarian", "traditional"],
           allergens: ["gluten", "dairy", "nuts"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_baklawa.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_baklawa.webp"
         }
       ]
     },
@@ -737,7 +737,7 @@ export const STATIC_MENU = {
           price: 24.80,
           tags: ["halal", "signature"],
           allergens: ["gluten"],
-          image: "https://raw.githubusercontent.com/seventhlegend/broadwaykebab/refs/heads/main/public/images/menu/UK220737_broadway%20bbq_Food_platter.jpg"
+          image: "/images/menu/UK220737_broadway%20bbq_Food_platter.webp"
         },
         {
           id: "seafood-platter",

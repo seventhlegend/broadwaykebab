@@ -20,7 +20,7 @@ export default function FloatingButtons({
   return (
     <div className="floating-buttons">
       <a
-        href="/booking"
+        href="/booking/"
         className="floating-button floating-button-booking"
         aria-label="Book a table"
       >

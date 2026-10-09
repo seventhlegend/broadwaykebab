@@ -106,6 +106,8 @@ pnpm run lint
 pnpm run build
 ```
 
+`pnpm run build` ve `pnpm run build:static` ayni statik production build'ini calistirir.
+
 Bu komut:
 
 1. Next.js static build olusturur.
@@ -113,7 +115,7 @@ Bu komut:
    - \_headers
    - \_redirects
    - vercel.json
-   - \_functions/[[path]].js
+   - `.nojekyll` (GitHub Pages icin)
 
 ### 8.2 Build Ciktisini Lokal Sunma
 
@@ -134,9 +136,10 @@ Not: start scripti out klasorunu 3000 portunda serve eder.
 Asagidaki komut release tipi bir zip olusturur:
 
 - Once build alir
-- out/images/menu klasorunu siler
+- Tum sayfalari ve yerel gorselleri pakete ekler
 - out klasorunun kendisini degil, sadece icerigini zipler
 - Tarih-saat iceren dosya adi uretir (ornek: broadwaykebab-static-build-20260402-1927.zip)
+- `.DS_Store` dosyalarini pakete eklemez
 
 ```bash
 pnpm run release:zip
@@ -222,12 +225,12 @@ Cloudflare ayarlari:
 
 - Build command: pnpm run build
 - Build output directory: out
-- Node.js: 18.x+
+- Node.js: 22 (repo kokundeki `.node-version` dosyasindan)
 
 ## 11. Konfigurasyon Dosyalari
 
 - next.config.ts: static export ve performans ayarlari
-- middleware.ts: guvenlik basliklari ve cache davranisi
+- .node-version: build icin Node.js surumu
 - vercel.json: Vercel ayarlari
 - wrangler.toml: Cloudflare Wrangler ayarlari
 - public/\_headers: static host icin header tanimlari
