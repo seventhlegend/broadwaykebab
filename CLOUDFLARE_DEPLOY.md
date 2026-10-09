@@ -8,7 +8,9 @@ This project is exported as a static Next.js site. The build writes HTML, JavaSc
 - Build output directory: `out`
 - Node.js: `22` (also recorded in `.node-version`)
 
-The `wrangler.toml` file identifies `out/` as the Pages output directory. The build copies `_headers`, `_redirects`, and the Vercel header config into `out/`. Cloudflare reads `_headers` and `_redirects` from the static output root.
+The `wrangler.toml` file identifies `out/` as the Pages output directory. The build copies `_headers` and `_redirects` into `out/`. Cloudflare reads them from the static output root.
+
+Pages determines each static file's `Content-Type` automatically. Keep MIME overrides out of `_headers` and use path patterns beginning with `/`, rather than bare extension patterns such as `*.css`. [Cloudflare combines repeated header values with commas](https://developers.cloudflare.com/pages/configuration/headers/), which makes a response containing several MIME types invalid for scripts, styles, and images.
 
 ## Routes and images
 
