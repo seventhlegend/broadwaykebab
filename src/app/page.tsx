@@ -1,18 +1,26 @@
-import { Metadata } from "next";
-import HomePage from "@/components/HomePage";
+import type { Metadata } from "next";
+import { HeroSection } from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import OffersSection from "@/components/sections/OffersSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ContactSection from "@/components/sections/ContactSection";
+import FloatingButtons from "@/components/common/FloatingButtons";
 
 export const metadata: Metadata = {
   title: "Broadway Kebab - Authentic Anatolian Cuisine",
   description:
-    "Experience the finest Anatolian kebabs and authentic Mediterranean cuisine in the heart of the city.",
-  keywords: "Anatolian cuisine, kebab, Mediterranean food, restaurant",
-  openGraph: {
-    title: "Broadway Kebab - Authentic Anatolian Cuisine",
-    description:
-      "Experience the finest Anatolian kebabs and authentic Mediterranean cuisine in the heart of the city.",
-  },
+    "Authentic Anatolian kebabs and Mediterranean cuisine in Tooting, London.",
 };
 
-export default function Page() {
-  return <HomePage />;
+export default function HomePage() {
+  return (
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <OffersSection />
+      <TestimonialsSection />
+      <ContactSection />
+      <FloatingButtons />
+    </main>
+  );
 }

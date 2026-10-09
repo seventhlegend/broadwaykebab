@@ -1,173 +1,28 @@
 @import "tailwindcss";
 
-:root {
-  /* Semantic theme tokens (active) */
-  --background: #ffffff;
-  --foreground: #171717;
-
-  --color-surface-page: #f9fafb;
-  --color-surface-card: #ffffff;
-
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #6b7280;
-  --color-text-inverse: #ffffff;
-
-  /* Brand palette (active: amber) */
-  --color-brand-50: #fffbeb;
-  --color-brand-100: #fef3c7;
-  --color-brand-200: #fde68a;
-  --color-brand-300: #fcd34d;
-  --color-brand-400: #fbbf24;
-  --color-brand-500: #f59e0b;
-  --color-brand-600: #d97706;
-  --color-brand-700: #b45309;
-  --color-brand-800: #92400e;
-  --color-brand-900: #78350f;
-
-  /* Future brand palette scaffold (inactive until class migration) */
-  --color-brand-next-50: #fffbeb;
-  --color-brand-next-100: #fef3c7;
-  --color-brand-next-200: #fde68a;
-  --color-brand-next-300: #fcd34d;
-  --color-brand-next-400: #fbbf24;
-  --color-brand-next-500: #f59e0b;
-  --color-brand-next-600: #d97706;
-  --color-brand-next-700: #b45309;
-  --color-brand-next-800: #92400e;
-  --color-brand-next-900: #78350f;
-
-  --color-accent-orange-600: #ea580c;
-  --color-accent-red-600: #dc2626;
-
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-
-  --color-border-strong: #ffffff;
-  --color-shadow-1: rgba(0, 0, 0, 0.1);
-  --color-shadow-2: rgba(0, 0, 0, 0.04);
-
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --color-surface-page: #030712;
-    --color-surface-card: #111827;
-    --color-text-primary: #f9fafb;
-    --color-text-secondary: #d1d5db;
-    --color-text-muted: #9ca3af;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  margin: 0;
+  background: #fff;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Critical styles for hero section LCP optimization */
-.hero-section {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(
-    to bottom right,
-    var(--color-brand-900),
-    var(--color-brand-800),
-    var(--color-brand-700)
-  );
+summary {
+  list-style: none;
+  cursor: pointer;
 }
 
-/* Hero image styles */
-.hero-image {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  z-index: 1 !important;
-  will-change: transform;
+summary::-webkit-details-marker {
+  display: none;
 }
 
-/* Performance optimization for animations */
-.performance-optimized {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Shimmer animation for loading skeletons */
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s ease-in-out infinite;
-}
-
-/* Floating Buttons - Always visible */
-.floating-buttons {
-  position: fixed !important;
-  bottom: 1.5rem !important;
-  right: 1.5rem !important;
-  z-index: 9999 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.75rem !important;
-}
-
-.floating-button {
-  width: 3.5rem !important;
-  height: 3.5rem !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 10px 25px -5px var(--color-shadow-1), 0 10px 10px -5px var(--color-shadow-2) !important;
-  border: 2px solid var(--color-border-strong) !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-.floating-button-phone {
-  background-color: var(--color-brand-700) !important;
-  color: var(--color-text-inverse) !important;
-}
-
-.floating-button-phone:hover {
-  background-color: var(--color-brand-800) !important;
-  transform: scale(1.05) !important;
-}
-
-.floating-button-booking {
-  background-color: #1f2937 !important;
-  color: var(--color-text-inverse) !important;
-}
-
-.floating-button-booking:hover {
-  background-color: #111827 !important;
-  transform: scale(1.05) !important;
-}
-
-.floating-button-whatsapp {
-  background-color: var(--color-success-600) !important;
-  color: var(--color-text-inverse) !important;
-}
-
-.floating-button-whatsapp:hover {
-  background-color: var(--color-success-700) !important;
-  transform: scale(1.05) !important;
 }

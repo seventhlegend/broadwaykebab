@@ -5,28 +5,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "pnpm run build:static",
-    "build:static": "next build --webpack && cp public/_headers out/ && cp public/_redirects out/ && rm -rf out/_functions",
-    "release:zip": "pnpm run build:static && ZIP_NAME=\"broadwaykebab-static-build-$(date +%Y%m%d-%H%M).zip\" && rm -f \"$ZIP_NAME\" && (cd out && zip -r \"../$ZIP_NAME\" . -x '*.DS_Store') && echo \"Created $ZIP_NAME\"",
+    "build": "rm -rf .next out && next build --webpack",
+    "build:static": "pnpm run build",
+    "release:zip": "pnpm run build && rm -f broadwaykebab-release.zip && cd out && zip -qr ../broadwaykebab-release.zip . -x '*.DS_Store'",
     "start": "pnpm dlx serve out -l 3000",
-    "lint": "eslint .",
-    "export": "pnpm run build:static",
-    "serve": "pnpm dlx serve out -l 3000",
-    "deploy:github": "GITHUB_PAGES=true pnpm run build:static && touch out/.nojekyll",
-    "deploy:netlify": "pnpm run build:static",
-    "deploy:vercel": "pnpm run build:static && echo 'Upload out/ directory to Vercel'",
-    "deploy:cloudflare": "pnpm run build:static && echo 'Upload out/ directory to Cloudflare Pages'"
+    "serve": "pnpm run start",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.4",
-    "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.511.0",
     "next": "16.2.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,57 +1,15 @@
-"use client";
-
-import Link from "next/link";
 import { Phone, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonClass } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { LoadingSkeleton } from "@/components/common/LoadingSkeleton";
+import { STATIC_CONTENT } from "@/lib/static-data";
 
 const CONTACT_ICON_CLASS = "w-6 h-6 text-amber-700 mt-1";
 const CONTACT_LINK_CLASS =
   "text-amber-700 hover:text-amber-800 font-medium inline-block";
-const CONTACT_ACTION_BUTTON_CLASS =
-  "border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white w-full";
-const CONTACT_PRIMARY_BUTTON_CLASS = "bg-amber-700 hover:bg-amber-800 w-full";
 
-interface ContactInfo {
-  title: string;
-  address: {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
-    country: string;
-  };
-  phone: string;
-  whatsapp: string;
-  whatsappMessage?: string;
-  email: string;
-  hours: {
-    [key: string]: string;
-  };
-  mapUrl: string;
-}
-
-interface ContactSectionProps {
-  contact: ContactInfo | null;
-}
-
-export default function ContactSection({ contact }: ContactSectionProps) {
-  if (!contact) {
-    return (
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <LoadingSkeleton height="h-[700px]" className="bg-white" />
-        </div>
-      </section>
-    );
-  }
-
-  // WhatsApp mesajını hazırla
-  const whatsappMessage =
-    contact.whatsappMessage ||
-    "Hello! I would like to make a booking at Broadway Kebab Restaurant. Could you please help me with availability and table reservation? Thank you! 🍽️";
-  const encodedMessage = encodeURIComponent(whatsappMessage);
+export default function ContactSection() {
+  const contact = STATIC_CONTENT.contact;
+  const encodedMessage = encodeURIComponent(contact.whatsappMessage);
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
@@ -108,7 +66,7 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                         </a>
                       </p>
                       <a
-                        href={`https://wa.me/${contact.whatsapp}?text=${encodedMessage}`}
+                        href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}?text=${encodedMessage}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${CONTACT_LINK_CLASS} mt-1`}
@@ -162,27 +120,30 @@ export default function ContactSection({ contact }: ContactSectionProps) {
                     you prefer.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/booking/" className="flex-1">
-                      <Button className={CONTACT_PRIMARY_BUTTON_CLASS}>
-                        Book a Table
-                      </Button>
-                    </Link>
-                    <Link href="/menu/" className="flex-1">
-                      <Button
-                        variant="outline"
-                        className={CONTACT_ACTION_BUTTON_CLASS}
-                      >
-                        View Menu
-                      </Button>
-                    </Link>
-                    <a href={`tel:${contact.phone}`} className="flex-1">
-                      <Button
-                        variant="outline"
-                        className={CONTACT_ACTION_BUTTON_CLASS}
-                      >
-                        <Phone className="w-4 h-4 mr-2" />
-                        Call
-                      </Button>
+                    <a
+                      href="/booking/"
+                      className={buttonClass({ className: "flex-1" })}
+                    >
+                      Book a Table
+                    </a>
+                    <a
+                      href="/menu/"
+                      className={buttonClass({
+                        variant: "outline",
+                        className: "flex-1",
+                      })}
+                    >
+                      View Menu
+                    </a>
+                    <a
+                      href={`tel:${contact.phone}`}
+                      className={buttonClass({
+                        variant: "outline",
+                        className: "flex-1",
+                      })}
+                    >
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call
                     </a>
                   </div>
                 </CardContent>

@@ -1,7 +1,5 @@
-"use client";
-
 import { Star } from "lucide-react";
-import { TestimonialSkeleton } from "@/components/common/LoadingSkeleton";
+import { STATIC_TESTIMONIALS } from "@/lib/static-data";
 
 const TESTIMONIALS_SECTION_GRADIENT_CLASS =
   "py-20 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500";
@@ -9,41 +7,8 @@ const TESTIMONIALS_MUTED_ORANGE_TEXT_CLASS = "text-orange-100";
 const TESTIMONIALS_BADGE_CLASS =
   "px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full";
 
-interface Testimonial {
-  id: number;
-  name: string;
-  rating: number;
-  text: string;
-  location: string;
-  date?: string;
-  verified?: boolean;
-  badges?: string[];
-}
-
-interface TestimonialsSectionProps {
-  testimonials: Testimonial[] | null;
-}
-
-export default function TestimonialsSection({
-  testimonials,
-}: TestimonialsSectionProps) {
-  if (!testimonials || testimonials.length === 0) {
-    return (
-      <section className={TESTIMONIALS_SECTION_GRADIENT_CLASS}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="h-10 bg-white/20 rounded-lg w-80 mx-auto mb-4 animate-pulse"></div>
-            <div className="h-6 bg-white/20 rounded w-96 mx-auto animate-pulse"></div>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <TestimonialSkeleton key={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+export default function TestimonialsSection() {
+  const testimonials = STATIC_TESTIMONIALS;
 
   return (
     <section className={TESTIMONIALS_SECTION_GRADIENT_CLASS}>

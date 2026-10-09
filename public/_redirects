@@ -1,3 +1,0 @@
-# Keep the generated static routes reachable without rewriting them to the home page.
-/menu /menu/ 301
-/booking /booking/ 301

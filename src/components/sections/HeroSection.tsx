@@ -1,57 +1,24 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { assetPath } from "@/lib/asset-path";
+import { STATIC_CONTENT } from "@/lib/static-data";
+import { buttonClass } from "@/components/ui/button";
 
-interface HeroSectionProps {
-  hero: {
-    title: string;
-    subtitle: string;
-    description: string;
-    ctaText: string;
-    ctaLink: string;
-    backgroundImage: string;
-  } | null;
-}
-
-export function HeroSection({ hero }: HeroSectionProps) {
+export function HeroSection() {
+  const hero = STATIC_CONTENT.hero;
   return (
-    <section className="hero-section performance-optimized">
-      {/* Background Image - Optimized for static export */}
+    <section className="relative flex min-h-[calc(100svh-5rem)] items-center justify-center overflow-hidden bg-amber-900">
       <img
-        src={assetPath(hero?.backgroundImage || "/images/background-1.avif")}
-        alt="Broadway Kebab Restaurant Background"
-        className="hero-image absolute inset-0 w-full h-full object-cover"
-        loading="eager"
+        src={hero.backgroundImage}
+        alt=""
+        fetchPriority="high"
+        className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
-      <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 performance-optimized">
-        {hero ? (
-          <>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              {hero.title}
-            </h1>
-            <p className="text-xl md:text-2xl mb-4">{hero.subtitle}</p>
-            <p className="text-lg mb-8">{hero.description}</p>
-            <Link href={hero.ctaLink}>
-              <Button size="lg" className="bg-amber-700 hover:bg-amber-800">
-                {hero.ctaText}
-              </Button>
-            </Link>
-          </>
-        ) : (
-          <>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Broadway Kebab
-            </h1>
-            <p className="text-xl md:text-2xl mb-4">Authentic Cuisine</p>
-            <p className="text-lg mb-8">
-              Experience the finest kebabs and Mediterranean flavors
-            </p>
-            <Button size="lg" className="bg-amber-700 hover:bg-amber-800">
-              View Our Menu
-            </Button>
-          </>
-        )}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="relative mx-auto max-w-4xl px-4 py-20 text-center text-white">
+        <h1 className="mb-6 text-5xl font-bold md:text-7xl">{hero.title}</h1>
+        <p className="mb-4 text-xl md:text-2xl">{hero.subtitle}</p>
+        <p className="mb-8 text-lg">{hero.description}</p>
+        <a href={hero.ctaLink} className={buttonClass({ size: "lg" })}>
+          {hero.ctaText}
+        </a>
       </div>
     </section>
   );

@@ -183,37 +183,26 @@ export const STATIC_TESTIMONIALS = [
   }
 ];
 
-export const STATIC_MENU_FEATURED = [
-  {
-    id: "mixed-grill",
-    name: "Mixed Grill",
-    description: "Selection of lamb, chicken and Adana kebab served with rice and salad",
-    price: 18.90,
-    tags: ["signature", "popular"],
-    featured: true,
-    image: ""
-  },
-  {
-    id: "lamb-shish",
-    name: "Lamb Shish",
-    description: "Tender cubes of lamb marinated and grilled to perfection",
-    price: 16.90,
-    tags: ["grilled", "signature"],
-    featured: true,
-    image: ""
-  },
-  {
-    id: "chicken-wings",
-    name: "Chicken Wings",
-    description: "Marinated chicken wings grilled and served with special sauce",
-    price: 12.90,
-    tags: ["popular", "spicy"],
-    featured: true,
-    image: ""
-  }
-];
+export interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  tags: string[];
+  allergens: string[];
+  image: string;
+  featured?: boolean;
+  subcategory?: { name: string; price: number }[];
+}
 
-export const STATIC_MENU = {
+export interface MenuCategory {
+  id: string;
+  name: string;
+  description: string;
+  items: MenuItem[];
+}
+
+export const STATIC_MENU: { categories: MenuCategory[] } = {
   categories: [
     {
       id: "cold-starters",

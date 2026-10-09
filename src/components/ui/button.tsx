@@ -1,39 +1,42 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import type { ButtonHTMLAttributes } from "react";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-amber-700 focus:ring-offset-2",
-  {
-    variants: {
-      variant: {
-        default: "bg-amber-700 text-white hover:bg-amber-800",
-        outline:
-          "border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white",
-        ghost: "bg-transparent text-amber-700 hover:bg-amber-100",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-8 px-3",
-        lg: "h-12 px-6",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
-);
+interface ButtonStyle {
+  variant?: "default" | "outline" | "ghost";
+  size?: "default" | "sm" | "lg";
+  className?: string;
+}
 
-interface ButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+export function buttonClass({
+  variant = "default",
+  size = "default",
+  className = "",
+}: ButtonStyle = {}) {
+  const variants = {
+    default: "bg-amber-700 text-white hover:bg-amber-800",
+    outline:
+      "border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white",
+    ghost: "text-amber-700 hover:bg-amber-100",
+  };
+  const sizes = {
+    default: "min-h-10 px-4 py-2",
+    sm: "min-h-8 px-3 py-1",
+    lg: "min-h-12 px-6 py-3",
+  };
+  return `inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700 ${variants[variant]} ${sizes[size]} ${className}`;
+}
 
-export const Button = ({ className, variant, size, ...props }: ButtonProps) => {
+export function Button({
+  variant,
+  size,
+  className,
+  type = "button",
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement> & ButtonStyle) {
   return (
     <button
-      className={cn(buttonVariants({ variant, size }), className)}
+      type={type}
+      className={buttonClass({ variant, size, className })}
       {...props}
     />
   );
-};
+}

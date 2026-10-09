@@ -1,5 +1,3 @@
-"use client";
-
 import { STATIC_CONTENT } from "@/lib/static-data";
 
 const FOOTER_MUTED_TEXT_CLASS = "text-gray-400";

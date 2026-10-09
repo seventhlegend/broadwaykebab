@@ -1,43 +1,35 @@
 import { CalendarDays, Phone } from "lucide-react";
 
-interface FloatingButtonsProps {
-  phone: string;
-  whatsapp: string;
-  whatsappMessage?: string;
-}
+import { STATIC_CONTENT } from "@/lib/static-data";
 
-export default function FloatingButtons({
-  phone,
-  whatsapp,
-  whatsappMessage,
-}: FloatingButtonsProps) {
-  // WhatsApp mesajını URL encode et
-  const message =
-    whatsappMessage ||
-    "Hello! I would like to make a booking at Broadway Kebab Restaurant. Could you please help me with availability and table reservation? Thank you! 🍽️";
-  const encodedMessage = encodeURIComponent(message);
+const buttonClass =
+  "flex h-14 w-14 items-center justify-center rounded-full border-2 border-white text-white shadow-lg transition-transform hover:scale-105";
+
+export default function FloatingButtons() {
+  const { phone, whatsapp, whatsappMessage } = STATIC_CONTENT.contact;
+  const encodedMessage = encodeURIComponent(whatsappMessage);
 
   return (
-    <div className="floating-buttons">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       <a
         href="/booking/"
-        className="floating-button floating-button-booking"
+        className={`${buttonClass} bg-gray-800 hover:bg-gray-900`}
         aria-label="Book a table"
       >
         <CalendarDays className="w-6 h-6" />
       </a>
       <a
         href={`tel:${phone}`}
-        className="floating-button floating-button-phone"
+        className={`${buttonClass} bg-amber-700 hover:bg-amber-800`}
         aria-label="Call us"
       >
         <Phone className="w-6 h-6" />
       </a>
       <a
-        href={`https://wa.me/${whatsapp}?text=${encodedMessage}`}
+        href={`https://wa.me/${whatsapp.replace(/\D/g, "")}?text=${encodedMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="floating-button floating-button-whatsapp"
+        className={`${buttonClass} bg-green-600 hover:bg-green-700`}
         aria-label="Contact us on WhatsApp"
       >
         <svg

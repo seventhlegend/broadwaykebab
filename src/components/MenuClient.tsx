@@ -1,434 +1,213 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import Image from "next/image";
-import { assetPath } from "@/lib/asset-path";
-import {
-  Star,
-  Search,
-  Filter,
-  ChevronDown,
-  ChevronUp,
-  X,
-  Utensils,
-  Leaf,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { ChevronDown, Search, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { STATIC_MENU } from "@/lib/static-data";
+import { Badge } from "@/components/ui/badge";
+import { STATIC_MENU, type MenuItem } from "@/lib/static-data";
 
-const MENU_CATEGORY_HEADER_CLASS =
-  "bg-amber-50 p-6 cursor-pointer hover:bg-amber-100 transition-colors";
-const MENU_CATEGORY_CHEVRON_CLASS = "w-6 h-6 text-amber-600";
-const MENU_FILTER_TAG_SELECTED_CLASS =
-  "bg-amber-600 hover:bg-amber-700 text-white";
-const MENU_FILTER_TAG_UNSELECTED_CLASS = "hover:bg-amber-50";
-const MENU_TAG_BADGE_CLASS = "text-xs";
+const tags = [
+  ...new Set(
+    STATIC_MENU.categories.flatMap((category) =>
+      category.items.flatMap((item) => item.tags),
+    ),
+  ),
+]
+  .filter((tag) => tag !== "category")
+  .sort();
 
-interface MenuItem {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  tags: string[];
-  allergens?: string[];
-  featured?: boolean;
-  image?: string;
-}
-
-interface MenuCategory {
-  id: string;
-  name: string;
-  description: string;
-  items: MenuItem[];
+function MenuItemCard({ item }: { item: MenuItem }) {
+  return (
+    <article className="flex flex-col gap-6 rounded-lg border border-gray-200 bg-white p-6 md:flex-row">
+      {item.image && (
+        <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-lg md:h-36 md:w-48">
+          <img
+            src={item.image}
+            alt={item.name}
+            width="192"
+            height="144"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+          {item.featured && (
+            <Badge className="absolute left-2 top-2">
+              <Star className="mr-1 h-3 w-3" />
+              Featured
+            </Badge>
+          )}
+        </div>
+      )}
+      <div className="min-w-0 flex-1">
+        <div className="mb-3 flex items-start justify-between gap-4">
+          <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
+          {!item.subcategory && (
+            <span className="whitespace-nowrap text-xl font-bold text-amber-700">
+              £{item.price.toFixed(2)}
+            </span>
+          )}
+        </div>
+        {item.description && (
+          <p className="mb-4 text-gray-600">{item.description}</p>
+        )}
+        {item.subcategory && (
+          <ul className="mb-4 space-y-2">
+            {item.subcategory.map((option) => (
+              <li
+                key={option.name}
+                className="flex justify-between gap-4 border-b border-gray-100 py-1 text-sm last:border-0"
+              >
+                <span>{option.name}</span>
+                <span className="whitespace-nowrap font-semibold text-amber-700">
+                  £{option.price.toFixed(2)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mb-3 flex flex-wrap gap-2">
+          {item.tags
+            .filter((tag) => tag !== "category")
+            .map((tag) => (
+              <Badge key={tag}>{tag}</Badge>
+            ))}
+        </div>
+        {item.allergens.length > 0 && (
+          <p className="text-sm text-gray-500">
+            Contains: {item.allergens.join(", ")}
+          </p>
+        )}
+      </div>
+    </article>
+  );
 }
 
 export default function MenuClient() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [openCategories, setOpenCategories] = useState<string[]>([
-    STATIC_MENU.categories[0]?.id || "",
-  ]);
-  const [showFilters, setShowFilters] = useState(false);
+  const query = search.trim().toLowerCase();
+  const categories = STATIC_MENU.categories
+    .map((category) => ({
+      ...category,
+      items: category.items.flatMap((item) => {
+        if (!selectedTags.every((tag) => item.tags.includes(tag))) return [];
+        const matches = `${item.name} ${item.description}`
+          .toLowerCase()
+          .includes(query);
+        if (matches) return [item];
+        const subcategory = item.subcategory?.filter((option) =>
+          option.name.toLowerCase().includes(query),
+        );
+        return subcategory?.length ? [{ ...item, subcategory }] : [];
+      }),
+    }))
+    .filter((category) => category.items.length > 0);
+  const isFiltering = Boolean(query || selectedTags.length);
 
-  // Get all unique tags from menu items
-  const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
-    (STATIC_MENU.categories as unknown as any[]).forEach((category: any) => {
-      category.items.forEach((item: any) => {
-        item.tags.forEach((tag: string) => tagSet.add(tag));
-      });
-    });
-    return Array.from(tagSet).sort();
-  }, []);
-
-  // Filter menu items based on search and tags
-  const filteredCategories = useMemo(() => {
-    return (STATIC_MENU.categories as unknown as any[])
-      .map((category: any) => ({
-        ...category,
-        items: category.items.filter((item: any) => {
-          const matchesSearch =
-            searchTerm === "" ||
-            item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-          const matchesTags =
-            selectedTags.length === 0 ||
-            selectedTags.every((tag) => item.tags.includes(tag));
-
-          return matchesSearch && matchesTags;
-        }),
-      }))
-      .filter((category: any) => category.items.length > 0);
-  }, [searchTerm, selectedTags]);
-
-  // Toggle category accordion
-  const toggleCategory = (categoryId: string) => {
-    setOpenCategories((prev) =>
-      prev.includes(categoryId)
-        ? prev.filter((id) => id !== categoryId)
-        : [...prev, categoryId],
-    );
-  };
-
-  // Toggle tag filter
-  const toggleTag = (tag: string) => {
-    setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
-    );
-  };
-
-  // Clear all filters
-  const clearFilters = () => {
-    setSearchTerm("");
+  function clearFilters() {
+    setSearch("");
     setSelectedTags([]);
-  };
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-amber-900 to-amber-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Menu</h1>
-            <p className="text-xl text-amber-100 max-w-2xl mx-auto">
-              Discover authentic Anatolian flavors
-            </p>
-          </div>
-        </div>
+    <main className="min-h-screen bg-gray-50">
+      <div className="bg-gradient-to-r from-amber-900 to-amber-700 px-4 py-16 text-center text-white">
+        <h1 className="mb-4 text-4xl font-bold md:text-5xl">Our Menu</h1>
+        <p className="text-xl text-amber-100">
+          Discover authentic Anatolian flavors
+        </p>
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Search and Filter Bar */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="flex flex-col lg:flex-row gap-4">
-            {/* Search Input */}
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mb-8 rounded-lg bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-4">
+            <div className="relative flex-1">
+              <label htmlFor="menu-search" className="sr-only">
+                Search menu items
+              </label>
+              <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
               <input
-                type="text"
+                id="menu-search"
+                type="search"
                 placeholder="Search menu items..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                className="w-full rounded-lg border border-gray-300 py-3 pl-10 pr-4 focus:border-amber-700 focus:outline-amber-700"
               />
             </div>
-
-            {/* Filter Toggle */}
-            <Button
-              variant="outline"
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-6 py-3"
-            >
-              <Filter className="w-5 h-5" />
-              Filters
-              {selectedTags.length > 0 && (
-                <Badge className="ml-2">{selectedTags.length}</Badge>
-              )}
-            </Button>
-
-            {/* Clear Filters */}
-            {(searchTerm || selectedTags.length > 0) && (
+            {isFiltering && (
               <Button variant="outline" onClick={clearFilters}>
-                <X className="w-4 h-4 mr-2" />
                 Clear
               </Button>
             )}
           </div>
-
-          {/* Filter Tags */}
-          {showFilters && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <h3 className="font-medium text-gray-900 mb-3">
-                Filter by tags:
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {allTags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    className={`cursor-pointer transition-colors ${
-                      selectedTags.includes(tag)
-                        ? MENU_FILTER_TAG_SELECTED_CLASS
-                        : MENU_FILTER_TAG_UNSELECTED_CLASS
-                    }`}
-                    onClick={() => toggleTag(tag)}
-                  >
-                    {tag}
-                  </Badge>
+          <details className="mt-4">
+            <summary className="font-medium text-amber-700">
+              Filters{selectedTags.length > 0 && ` (${selectedTags.length})`}
+            </summary>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Button
+                  key={tag}
+                  size="sm"
+                  variant={selectedTags.includes(tag) ? "default" : "outline"}
+                  aria-pressed={selectedTags.includes(tag)}
+                  onClick={() =>
+                    setSelectedTags((current) =>
+                      current.includes(tag)
+                        ? current.filter((value) => value !== tag)
+                        : [...current, tag],
+                    )
+                  }
+                >
+                  {tag}
+                </Button>
+              ))}
+            </div>
+          </details>
+        </div>
+        <p aria-live="polite" className="mb-6 text-gray-600">
+          Showing{" "}
+          {categories.reduce(
+            (count, category) => count + category.items.length,
+            0,
+          )}{" "}
+          items{isFiltering && " matching your filters"}
+        </p>
+        <div className="space-y-6">
+          {categories.map((category) => (
+            <details
+              key={category.id}
+              open={isFiltering || category.id === "cold-starters"}
+              className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm"
+            >
+              <summary className="flex items-center justify-between gap-4 bg-amber-50 p-6 hover:bg-amber-100">
+                <div>
+                  <h2 className="mb-2 text-2xl font-bold text-gray-900">
+                    {category.name}
+                  </h2>
+                  <p className="text-gray-600">{category.description}</p>
+                </div>
+                <ChevronDown className="h-6 w-6 shrink-0 text-amber-700 group-open:rotate-180" />
+              </summary>
+              <div
+                className={`grid gap-6 p-6 ${category.id === "drinks" ? "md:grid-cols-2 lg:grid-cols-3" : ""}`}
+              >
+                {category.items.map((item) => (
+                  <MenuItemCard key={item.id} item={item} />
                 ))}
               </div>
-            </div>
-          )}
+            </details>
+          ))}
         </div>
-
-        {/* Results Summary */}
-        <div className="mb-6">
-          <p className="text-gray-600">
-            Showing{" "}
-            <span className="font-medium">
-              {filteredCategories.reduce(
-                (total: number, cat: any) => total + cat.items.length,
-                0,
-              )}
-            </span>{" "}
-            items
-            {(searchTerm || selectedTags.length > 0) &&
-              " matching your filters"}
-          </p>
-
-          {/* Expand/Collapse All */}
-          <div className="mt-4 space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() =>
-                setOpenCategories(filteredCategories.map((c: any) => c.id))
-              }
-            >
-              Expand All
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setOpenCategories([])}
-            >
-              Collapse All
-            </Button>
-          </div>
-        </div>
-
-        {/* Menu Categories */}
-        <div className="space-y-6">
-          {filteredCategories.map((category: any) => {
-            const isOpen = openCategories.includes(category.id);
-
-            // Special rendering for drinks category
-            if (category.id === "drinks") {
-              return (
-                <Card key={category.id} className="overflow-hidden">
-                  <div
-                    className={MENU_CATEGORY_HEADER_CLASS}
-                    onClick={() => toggleCategory(category.id)}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                          {category.name}
-                        </h2>
-                        <p className="text-gray-600">{category.description}</p>
-                        <p className="text-sm text-amber-700 mt-2">
-                          {category.items.length} categor
-                          {category.items.length !== 1 ? "ies" : "y"}
-                        </p>
-                      </div>
-                      {isOpen ? (
-                        <ChevronUp className={MENU_CATEGORY_CHEVRON_CLASS} />
-                      ) : (
-                        <ChevronDown className={MENU_CATEGORY_CHEVRON_CLASS} />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Drinks Categories */}
-                  {isOpen && (
-                    <CardContent className="p-0">
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-                        {category.items.map((drinkCategory: any) => (
-                          <div
-                            key={drinkCategory.id}
-                            className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
-                          >
-                            <div className="flex items-center justify-between mb-3">
-                              <h3 className="text-lg font-semibold text-gray-900">
-                                {drinkCategory.name}
-                              </h3>
-                              {drinkCategory.tags.includes("alcoholic") && (
-                                <Badge className="text-xs bg-red-100 text-red-800">
-                                  21+
-                                </Badge>
-                              )}
-                              {drinkCategory.tags.includes("traditional") && (
-                                <Badge className="text-xs bg-amber-100 text-amber-800">
-                                  Traditional
-                                </Badge>
-                              )}
-                            </div>
-
-                            <div className="space-y-2">
-                              {drinkCategory.subcategory?.map(
-                                (drink: any, index: number) => (
-                                  <div
-                                    key={index}
-                                    className="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0"
-                                  >
-                                    <span className="text-sm text-gray-700">
-                                      {drink.name}
-                                    </span>
-                                    <span className="text-sm font-semibold text-amber-600">
-                                      £{drink.price.toFixed(2)}
-                                    </span>
-                                  </div>
-                                ),
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  )}
-                </Card>
-              );
-            }
-
-            // Regular rendering for other categories
-            return (
-              <Card key={category.id} className="overflow-hidden">
-                <div
-                  className={MENU_CATEGORY_HEADER_CLASS}
-                  onClick={() => toggleCategory(category.id)}
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                        {category.name}
-                      </h2>
-                      <p className="text-gray-600">{category.description}</p>
-                      <p className="text-sm text-amber-700 mt-2">
-                        {category.items.length} item
-                        {category.items.length !== 1 ? "s" : ""}
-                      </p>
-                    </div>
-                    {isOpen ? (
-                      <ChevronUp className={MENU_CATEGORY_CHEVRON_CLASS} />
-                    ) : (
-                      <ChevronDown className={MENU_CATEGORY_CHEVRON_CLASS} />
-                    )}
-                  </div>
-                </div>
-
-                {/* Category Items */}
-                {isOpen && (
-                  <CardContent className="p-0">
-                    <div className="grid gap-6 p-6">
-                      {category.items.map((item: any) => (
-                        <div
-                          key={item.id}
-                          className="flex flex-col md:flex-row gap-6 p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-                        >
-                          {/* Item Image */}
-                          {item.image && (
-                            <div className="md:w-48 md:h-36 w-full h-48 relative rounded-lg overflow-hidden flex-shrink-0">
-                              <Image
-                                src={assetPath(item.image)}
-                                alt={item.name}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 192px"
-                              />
-                              {item.featured && (
-                                <Badge className="absolute top-2 left-2 bg-amber-600">
-                                  <Star className="w-3 h-3 mr-1 fill-current" />
-                                  Featured
-                                </Badge>
-                              )}
-                            </div>
-                          )}
-
-                          {/* Item Details */}
-                          <div className="flex-1">
-                            <div className="flex justify-between items-start mb-3">
-                              <h3 className="text-xl font-semibold text-gray-900">
-                                {item.name}
-                              </h3>
-                              <span className="text-2xl font-bold text-amber-600 ml-4">
-                                £{item.price.toFixed(2)}
-                              </span>
-                            </div>
-
-                            <p className="text-gray-600 mb-4">
-                              {item.description}
-                            </p>
-
-                            {/* Tags */}
-                            <div className="flex flex-wrap gap-2 mb-4">
-                              {item.tags.slice(0, 2).map((tag: string) => (
-                                <Badge
-                                  key={tag}
-                                  className={MENU_TAG_BADGE_CLASS}
-                                >
-                                  {tag === "vegetarian" && (
-                                    <Leaf className="w-3 h-3 mr-1" />
-                                  )}
-                                  {tag === "signature" && (
-                                    <Star className="w-3 h-3 mr-1" />
-                                  )}
-                                  {tag === "popular" && (
-                                    <Utensils className="w-3 h-3 mr-1" />
-                                  )}
-                                  {tag}
-                                </Badge>
-                              ))}
-                              {item.tags.length > 2 && (
-                                <Badge className={MENU_TAG_BADGE_CLASS}>
-                                  +{item.tags.length - 2} more
-                                </Badge>
-                              )}
-                            </div>
-
-                            {/* Allergens */}
-                            {item.allergens && item.allergens.length > 0 && (
-                              <p className="text-sm text-gray-500">
-                                <span className="font-medium">Contains:</span>{" "}
-                                {item.allergens.join(", ")}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                )}
-              </Card>
-            );
-          })}
-        </div>
-
-        {/* No Results */}
-        {filteredCategories.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-400 text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-medium text-gray-900 mb-2">
-              No items found
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Try adjusting your search or clearing the filters
+        {categories.length === 0 && (
+          <div className="py-12 text-center">
+            <h2 className="mb-2 text-xl font-semibold">No items found</h2>
+            <p className="mb-6 text-gray-600">
+              Try another search or clear the filters.
             </p>
             <Button onClick={clearFilters}>Clear Filters</Button>
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

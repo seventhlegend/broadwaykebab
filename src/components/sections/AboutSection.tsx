@@ -1,8 +1,6 @@
-"use client";
-
 import { Star, Utensils, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { LoadingSkeleton } from "@/components/common/LoadingSkeleton";
+import { STATIC_CONTENT } from "@/lib/static-data";
 
 const ABOUT_FEATURE_CARD_CLASS =
   "text-center p-8 border-2 border-amber-200 hover:border-amber-300 transition-colors";
@@ -10,31 +8,8 @@ const ABOUT_FEATURE_ICON_WRAPPER_CLASS =
   "w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4";
 const ABOUT_FEATURE_ICON_CLASS = "w-8 h-8 text-amber-700";
 
-interface AboutFeature {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-interface AboutSectionProps {
-  about: {
-    title: string;
-    subtitle: string;
-    description: string;
-    features: AboutFeature[];
-  } | null;
-}
-
-export default function AboutSection({ about }: AboutSectionProps) {
-  if (!about) {
-    return (
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <LoadingSkeleton height="h-[600px]" className="bg-white" />
-        </div>
-      </section>
-    );
-  }
+export default function AboutSection() {
+  const about = STATIC_CONTENT.about;
 
   // Icon mapping for about section features
   const iconMap = {

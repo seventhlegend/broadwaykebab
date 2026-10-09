@@ -6,8 +6,8 @@ const eslintConfig = [
   ...nextTs,
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "off",
+      // Static pages use ordinary links rather than the client-side Next router.
+      "@next/next/no-html-link-for-pages": "off",
       "@next/next/no-img-element": "off",
     },
   },
